@@ -1,0 +1,35 @@
+* {
+  font-size: 1.2rem;
+  text-align: center;
+}
+.container {
+  background-color: fuchsia;
+  display: flex;
+  flex-direction: row; /*! default =>row */
+  /*!sıkıştıma veya alt satıra geçebilme flex-wrap: wrap nowrap. wrap-reverse*/
+  /*! Yatay Hizalama: justify-content
+  /** flex-start, flex-end,center, space-around,space-evenly, space-between*/
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /*?gap, flex içerisindeki elemanların dikey ve yatay boşluklarını belirlemek için kullanılabilir. ilk yazılan yatay (satırlar arası) boşluk, 2. yazılan ise dikey (sutunlar arası) boşluktur */
+  gap: 20px 30px;
+  padding: 0.5rem;
+}
+
+.container div {
+  background-color: gold;
+  width: 5rem;
+  height: 5rem;
+  /* margin: 1rem; */
+}
+
+.container1 {
+  height: 20rem;
+  background-color: greenyellow;
+  display: flex;
+}
+
+.container1 div {
+  height: 5rem;
+  background-color: tomato;
+}
