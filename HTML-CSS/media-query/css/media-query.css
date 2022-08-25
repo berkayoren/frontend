@@ -8,6 +8,7 @@ body {
   font-family: var(--ff-roboto);
   background-color: var(--mavi-9);
   color: var(--siyah);
+  font-weight: 500;
   margin: 1rem;
 }
 
@@ -39,7 +40,7 @@ h1 {
   color: var(--beyaz);
   padding: 1rem 1.5rem;
   transition: all 1s;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
 }
 .navbar a:hover {
   background-color: var(--gri-7);
@@ -86,6 +87,10 @@ h1 {
   .col {
     width: 50%;
   }
+  h1 {
+    width: 15rem;
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (min-width: 0px) and (max-width: 600px) {
@@ -102,5 +107,9 @@ h1 {
   }
   .col {
     width: 100%;
+  }
+  h1 {
+    width: 12rem;
+    font-size: 1.2rem;
   }
 }
