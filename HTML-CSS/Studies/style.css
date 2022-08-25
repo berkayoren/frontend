@@ -1,0 +1,38 @@
+/* ID ÖNCELIKLI */
+*{
+    margin: 0;
+    padding: 0;
+}
+#paragraph3{
+    background-color: blueviolet;
+}
+#paragraph2{
+    background-color: crimson;
+    width: 30%;
+    margin: auto;
+    border: 3px solid blue;
+
+}
+#paragraph1{
+    background-color: black;
+}
+.ortak{
+    background-color: burlywood;
+}
+#id3{
+    background-color: aqua;
+    border-style: dashed;
+    border-width: 5px;
+    border-color: blue;
+    border-radius: 20px;    
+    padding: 20px;
+    margin: 50px;
+}
+.container{
+    border: 2px solid red;
+    padding: 20px;
+}
+#last{
+    background-color: orange;
+    padding: inherit;
+}

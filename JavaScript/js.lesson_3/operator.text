@@ -1,0 +1,74 @@
+// Comparison Operators
+// == Equality operator.//eşittir
+// const a = 5, b = 2, c = 'Clarusway';
+// console.log(a == 5);     // true
+// console.log(b == '2');   // true
+// console.log(c == 'clarusway');  // false
+// != Inequality operator.//eşit değil?
+// const a = 3, c = 'Clarusway';
+// console.log(a != 2); // true
+// console.log(c != 'clarusway'); // true
+// === Strict equality operator.//hem içerik hem de tür olarak eşit mi?
+// console.log(2 === 2); // true
+// console.log(2 === '2'); // false
+// !== Strict inequality operator.//eşit değil midir?Sonucu tersine çevir.
+// const a = 2, c = 'Clarusway';
+// console.log(a !== 2); // false              2, 2 ye eşit değildir   =   false
+// console.log(a !== '2'); // true             2, stringe eşit değildir  =  true
+// console.log(c !== 'clarusway'); // true         Clarusway, clarusway e eşit değildir  =  true
+/* < Less than operator.
+const a = 3, b = 2;
+console.log(a < 2); // false
+console.log(b < 3); // true */
+// > Greater than operator.
+// const a = 3;
+// console.log(a > 2); // true
+// <= Less than or equal operator.
+// const a = 2;
+// console.log(a <= 3); // true
+// console.log(a <= 2); // true
+// >= Greater than or equal operator.
+// const a = 3;
+// console.log(a >= 3); //true
+
+---------------------------------------------------------
+
+Logical Operators
+NOT(!)
+AND (&&)
+OR (||)
+
+// ! Logical NOT //Boolean değerlerini(true-false) tersine çevirir
+// const a = true, b = false;
+// console.log(!a); // false
+// console.log(!b); // true
+// && Logical AND //İçinden birisi false ise sonuç false olur
+// const a = true, b = false;
+// const c = 8;
+// console.log(a && a); // true
+// console.log(a && b);  // false
+// console.log((c > 2) && (c < 2)); // false
+// || Logical OR//İçinden birisi true ise sonuç true olur
+// const a = true, b = false, c = 4;
+// console.log(a || b); // true
+// console.log(b || b); // false
+// console.log((c>2) || (c<2)); // true
+
+
+MANTIKSAL OPERATÖRLER   
+AND      &&      ve          (ampersan)
+ OR      ||      veya        (pipe)
+NOT      !       değildir    (negation)
+and false hassastır. 
+true1   &&  true2       --> true2  false bulamadı en son true'yu return etti
+true    &&  false       --> false  ilk false aldı
+false1  &&  false2     --> false1  ilk false aldı
+false   &&  true       --> false   ilk false aldı.
+or true hassastır. 
+true1   ||  true2       --> true1  ilk true'yu alır
+true    ||  false       --> true  ilk false aldı
+false1  ||  false2     --> false2 true bulamadı en son false aldı 
+false   ||  true       --> true   ilk true aldı.
+not terse çevirir.
+!false                  --> true
+!true                   --> false

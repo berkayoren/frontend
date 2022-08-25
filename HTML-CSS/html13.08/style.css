@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    background-color: rgb(134, 103, 64);
+}
+.abs{
+    background-color: aqua;
+    width: 5cm;
+}
+
+.div2{
+    background-color: chocolate;
+    width: 50%;
+    height: 50%;
+}
+
+.div3{
+    background-color: yellow;
+    width: 50%;
+    height: 20vh;
+}
+
+.div4{
+    background-color: greenyellow;
+    width: 50vw;
+}
+
+.div5 {
+    font-size: 1em; /*16px*/
+}
+.div6 {
+    font-size: 2em; /*32px*/
+}
+.div7 {
+    font-size: 2em; /*96px*/
+}
+.div8 {
+    font-size: 1rem; /*96px*/
+}
+.div9 {
+    font-size: 2rem; /*96px*/
+}
+.div10 {
+    font-size: 3em; /*96px*/
+}

@@ -1,0 +1,72 @@
+.main{
+    width: 100%;
+    background-color: rgba(0, 255, 255, 0.226);
+    height: 1000px;
+    /* margin: 30px; */
+    padding: 5px;
+    /* position: relative; */
+    margin-top: 50px;
+}
+
+.box1 {
+    width: 100px;
+    /* margin: auto; */
+    /* border-radius: 20px; */
+    height: 100px;
+    background-color: rgba(255, 0, 255, 0.61);
+    /* position: fixed; */
+    position: relative;
+    bottom: 20px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.box2 {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(231, 233, 102, 0.534);
+    position: relative;
+    bottom: 20px;
+    /* top: 20px;
+    left: 30px; */
+    left: 30px;
+    z-index: 2;
+}
+.box3 {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 0, 0, 0.616);
+    /* position: absolute; */
+    /* top: 20px; */
+    /* left: 80px; */
+    position: relative;
+    left: 0;
+    bottom: 65px;
+    z-index: 50;
+}
+#icerde{
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    font-size: .7rem;
+    color:red;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+#icerde2{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 0, 43);
+    font-size: .7rem;
+    color:yellow;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#paragraf{
+    background-color: coral;
+    position: fixed;
+    top: 0px;
+    left: 0;
+}
