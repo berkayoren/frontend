@@ -1,0 +1,90 @@
+.yazi{
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto;
+    width: 50vw;
+}
+
+/* ******************ROTATE************** */
+
+.yazi1{
+    background-color: greenyellow;
+    transform: rotateX(180deg);
+    /*! 90 ve 270 derecelerde yazılar tam dik olduklarından ve 3-boyutlu olarak bakamadığımız için gözükmezler */
+}
+.yazi2{
+    background-color: fuchsia;
+    transform: rotateY(180deg);
+}
+.yazi3{
+    background-color: hotpink;
+    transform: rotateZ(-45deg);
+}
+/* .yazi3:hover{
+    transform: rotateZ(9000deg);
+    transition: 10s;
+} */
+
+/* ****************SCALE**************** */
+
+.yazi4{
+    background-color: indianred;
+}
+.yazi4:hover{
+    /* transform: scale(1.5); */
+    transform: scaleX(3) scaleY(3);
+    transition: 1s;
+}
+.yazi5{
+    background-color: red;
+}
+.yazi5:active{
+    transform: scale(98%);
+    transition: 0.1s;
+}
+
+/* ***************TRANSLATE - TRANSITION *************** */
+.translate{
+    background-color: gold;
+    font-weight: 800;
+    font-size: 1.1rem;
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    transition: all 1s;
+}
+.x{
+    transition: transform 1s;
+}
+.x:hover{
+    transform: translateX(50px) scale(50%);
+    background-color: greenyellow;
+}
+.y:active{
+    transform: translateY(-50px);
+    background-color: tomato;
+}
+.xy:active{
+    transform: translate(50px, 50px);
+    background-color: fuchsia;
+}
+.btn-div {
+    text-align: center;
+}
+
+.btn {
+    padding: 1rem;
+    width: 7rem;
+    background-color: goldenrod;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    transition: backgorund-color 0.5s, color 0.5s;
+}
+.btn:hover{
+    background-color: black;
+    color: red;
+}
+.btn:active{
+    transform: scale(95%);
+}

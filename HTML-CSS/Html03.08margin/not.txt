@@ -1,0 +1,16 @@
+text-align:left; => sola hizalanır.
+text-align:center; => ortaya hizalanır.
+text-align:right; => sağa hizalanır.
+text-align:justify; => sağa ve sola hizalanır.
+text-decoration özelliğinin alabileceği farklı değerler vardır.
+text-decoration: overline, özelliği yazının üstüne bir çizgi ekler.
+text-decoration: line-through, özelliği yazının ortasına bir çizgi ekler.
+text-decoration: underline, özelliği yazının altına bir çizgi ekler.
+** text-transform:uppercase; diyerek tüm harfleri büyük harfe çevirmiş oluruz.
+** text-transform:lowercase; diyerek tüm harfleri küçük harfe çevirmiş oluruz.
+** text-transform:capitalize; diyerek cümle içindeki her kelimenin baş harfini büyük yapmış oluruz.
+Css text transformation özelliği yazı karakterlerini büyük harften küçük harfe, küçük haften büyük harfe ya da kelimelerin baş harflerinin büyük harfe çevrilmesinde kullanılır.
+Css text indent özelliği paragraf başı yapmak için kullanılır
+Css letter spacing, her bir harf arasındaki mesafeyi belirler.
+Css Line Height özelliği satır aralıklarını belirler.
+Css Word Spacing ile kelime arasındaki boşlukları belirleyiz.

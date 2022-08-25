@@ -1,0 +1,28 @@
+body{
+    padding: 50px;
+    /* border: 1px solid red; */
+    /* margin: 50px; */
+}
+a{
+    /* border: 1px solid red; */
+    padding: 5px;
+    /* margin: 10px; */
+    margin-right: 5px;
+    margin-top: 50x;
+    text-decoration: none;
+    background-color: darkorange;
+    border-radius: 20px;
+    color: azure;
+    font-size: 1.5rem;
+}
+
+a:hover{
+    background-color: gray;
+    color: aqua;
+}
+a:visited{
+    /* color: red; */
+}
+a:active{
+    background-color: red;
+}

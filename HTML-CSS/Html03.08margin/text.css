@@ -1,0 +1,43 @@
+h2{
+    text-align: center;
+}
+#par1{
+    color: blue;
+    text-align: center;
+    text-transform: capitalize;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    column-count: 3;
+    column-rule: 3px solid blue;
+    -webkit-column-count: 3;
+
+}
+#par2{
+    color: rgba(255, 0, 0, 1);
+    text-align: right;
+    text-transform: lowercase;
+    text-shadow: 3px 3px 2px red;
+    
+}
+#par3{
+    color: #8a5dd1;
+    text-align: justify;
+    text-decoration: line-through dashed 5px red;
+}
+#par4{
+    color: hsl(0, 100%, 50%);
+    text-decoration: underline;
+    text-indent: 2rem;
+    letter-spacing: 5px;
+    line-height: 1rem;
+}
+#par5{
+    color: fuchsia;
+    text-transform: uppercase;
+    word-spacing: 1rem;
+    font-family: 'Yellowtail', cursive;
+}
+#span1{
+    color: fuchsia;
+    text-decoration: overline wavy blue;
+}
