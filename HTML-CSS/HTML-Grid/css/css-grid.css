@@ -4,8 +4,12 @@
 }
 .container {
   display: grid;
+  /*! Sırasıyla 200px, 40vw ve 20rem'lik 3 adet sütun tanımlama */
   grid-template-columns: 200px 40vw 20rem;
+  /*! Sırasıyla 100px, 200px, 20vh ve 4 rem'lik yüksekliğe sahip 4 adet satır tamamla 4x3 grid */
   grid-template-rows: 100px 200px 20vh 4rem;
+  /*! Grid seviyesinde hizalama*/
+  justify-content: center;
 }
 .content {
   background-color: wheat;
