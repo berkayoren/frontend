@@ -6,7 +6,7 @@ select.onchange = (e) => {
   funct = e.target.value;
   form.onsubmit = (b) => {
     b.preventDefault();
-    if (e.target.value === "reverseString") {
+    if (e.target.value === "resverseString") {
       reverseStr(b.target[0].value);
     } else {
       reverseWord(b.target[0].value);
