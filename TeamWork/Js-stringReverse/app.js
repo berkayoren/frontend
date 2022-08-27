@@ -4,19 +4,24 @@ const select = document.getElementById("select");
 let funct = "";
 select.onchange = (e) => {
   funct = e.target.value;
-  form.unsubmit = () => {
+  form.onsubmit = (b) => {
     b.preventDefault();
-    console.log(b);
+    if (e.target.value === "reverseString") {
+      reverseStr(b.target[0].value);
+    } else {
+      reverseWord(b.target[0].value);
+    }
   };
 };
-console.log(funct);
 
 const reverseWord = (str) => {
   let arr = str.split("").reverse().join("");
+  result.innerText = str.split("").reverse().join("");
   return arr;
 };
 
 const reverseStr = (str) => {
   let arr = str.split(" ").reverse().join(" ");
+  result.innerText = str.split(" ").reverse().join(" ");
   return arr;
 };
