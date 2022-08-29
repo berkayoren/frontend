@@ -179,28 +179,53 @@ console.log(yeniArabalar1);
 
 //* concat()
 //*-----------------------------------------------------------
+const yazilar = ["Bugun", "hava", "cok", "guzel"];
+const numbersArr = [1, 2, 5, 7];
+const combinedArr = yazilar.concat(
+  true,
+  numbersArr[("aslinda", "cok", "sicak")]
+);
+console.log(combinedArr);
 
 //* every()
 //*-----------------------------------------------------------
-
 //? Tum diziyi itere eder ve aldigi callback fonksiyonuna gore
 //? test gerceklestirir.Tum elemanlar icin test basarili ise
 //? true aksi takdirde false deger dondurur.
+
+const yasArray = [18, 22, 34, 78, 81, 15];
+const check = yasArray.every((yas) => yas >= 18);
+check
+  ? console.log("Dizideki herkesin yasi 18'den büyüktür")
+  : console.log("Dizide 18 yas altı var");
 
 //* some()
 //*-----------------------------------------------------------
 //? Aldigi callback fonksiyonuna gore test gerceklestirir.
 //? En az bir eleman icin bile test basarili ise true aksi
 //? takdirde false deger dondurur.
+const buyuk80 = yasArray.some((y) => y >= 80);
+console.log(buyuk80); //?false
 
-//* find()
+//* find(), findLast()
 //*-----------------------------------------------------------
 //? Aldigi callback fonksiyonuna gore test gerceklestirir.
 //? Kosulu saglayan ilk dizi elemaninin dondurur.
 //? Eger hic bir eleman kosulu saglamazsa undefined dondurur.
+//?Ornek: Yasi 30 dan buyuk olan ilk elemanı yazdirin
+const yasIlk30 = yasArray.find((yas) => yas >= 30);
+const yasSon30 = yasArray.findLast((yas) => yas >= 30);
+console.log(yasIlk30);
+console.log(yasSon30);
+
+const names = ["Ahmet", "Can", "Mustafa", "Merve", "Can"];
 
 //* findIndex()
 //*-----------------------------------------------------------
 //? Aldigi callback fonksiyonuna gore test gerceklestirir.
 //? Kosulu saglayan ilk dizi elemaninin indeksini dondurur.
 //? Eger hic bir eleman kosulu saglamazsa -1 dondurur.
+
+//?Ornek: Yasi 30 dan buyuk olan ilk elemanı yazdirin
+const foundIndex = yasArray.findIndex((yas) => yas >= 30);
+console.log(foundIndex);
