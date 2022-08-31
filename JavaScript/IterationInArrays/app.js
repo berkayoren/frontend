@@ -158,6 +158,19 @@ console.log(bigThan);
 
 const range = salaries.filter((s) => s >= 6000 && s <= 10000);
 console.log(range);
+
+//?------------------ORNEK-------------------------
+//? Maasi 9000'dem az olanlara %10 zam yaparak bu degerleri yeni diziye saklayalım
+
+const lessThan9000Inc = salaries
+  .filter((s) => s < 9000)
+  .map((s) => Math.trunc(s * 1.1));
+console.log(lessThan9000Inc);
+
+salaries
+  .filter((s) => s < 9000)
+  .map((s) => Math.trunc(s * 1.1))
+  .forEach((s) => console.log(s));
 //* ======================================================
 //*                 REDUCE METHOD
 //* ======================================================
