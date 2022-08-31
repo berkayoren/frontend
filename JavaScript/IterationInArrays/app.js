@@ -17,6 +17,7 @@ console.log(pozitifler);
 //?--------------- ÖRNEK ---------------------
 
 //? Dizideki notlarin ortalamasini hesaplayiniz.
+
 const notlar = [55, 77, 23, 89, 100];
 
 let toplam = 0;
@@ -115,6 +116,31 @@ const tlPrices = [100, 150, 100, 50, 80];
 const euroPrices = tlPrices.map((tl) => Number((tl / euro).toPrecision(3)));
 console.log(euroPrices);
 
+const dolarPrices = tlPrices.map((tl) => Number((tl / dolar).toFixed(2)));
+console.log(dolarPrices);
+
+//?-------------- ÖRNEK -------------------
+//? products dizisinin icerisindeki her urunu (Orjinal dizideki)
+//? buyuk harf olarak degistirelim.
+
+const products = [
+  "Iphone12",
+  "samsungS20",
+  "lenovo",
+  "macbook pro",
+  "mac air",
+  "Galaxy tablet",
+  "macbook",
+  "Iphone12",
+  "mac air",
+  "lenovo",
+  "macbook pro",
+  "samsungS20",
+];
+//! Orjinal diziyi degistidik.
+products.map((p, i, arr) => (arr[i] = p.toUpperCase()));
+console.log(products);
+
 //* ======================================================
 //*                CHAINING (PIPELINE)
 //* ======================================================
@@ -122,7 +148,13 @@ console.log(euroPrices);
 //* ======================================================
 //*                 FILTER METHOD
 //* ======================================================
+const salaries = [5500, 8000, 9000, 10000, 15000, 25000];
 
+//?-------------- ÖRNEK -------------------
+//? Maasi 10000'den buyuk olanlari ayri bir diziye saklayalim
+
+const bigThan = salaries.filter((s) => s > 10000);
+console.log(bigThan);
 //* ======================================================
 //*                 REDUCE METHOD
 //* ======================================================
