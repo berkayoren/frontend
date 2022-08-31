@@ -155,6 +155,9 @@ const salaries = [5500, 8000, 9000, 10000, 15000, 25000];
 
 const bigThan = salaries.filter((s) => s > 10000);
 console.log(bigThan);
+
+const range = salaries.filter((s) => s >= 6000 && s <= 10000);
+console.log(range);
 //* ======================================================
 //*                 REDUCE METHOD
 //* ======================================================
