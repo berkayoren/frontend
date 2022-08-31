@@ -76,11 +76,44 @@ const prices = [100, 250, 50, 89];
 
 prices.forEach((p) => console.log(p));
 
-//? ORNEKÇ prices dizisindekilerin toplamini konsola yazdiriniz. */
+//? ORNEKÇ prices dizisindekilerin toplamini konsola yazdiriniz.
+
+let sum = 0;
+prices.forEach((price) => (sum += price));
+console.log("Sum:", sum);
+
+//? ORNEKÇ prices dizisindekilerin herbir ara toplam değerini konsola yazdiriniz.Ayrica herbir fiyata %10 zam yapiniz */
+
+let total = 0;
+prices.forEach((price, index) => {
+  total += price;
+  console.log(`${index + 1}.iteraiton:${total}`);
+  prices[index] = Math.trunc(price * 1.1);
+});
+console.log(prices);
 
 //* ======================================================
 //*                       MAP METHOD
 //* ======================================================
+
+//?----------------------Örnek------------------------
+//? Bir dizideki tüm isimleri büyük  isimleri Büyük harfe dönüştüren uygulamayı yazınız.
+let names = ["Mustafa", "Murat", "Ahmet", "Mustafa", "Ayşe", "Canan"];
+
+const bigNames = names.map((name) => name.toUpperCase());
+console.log(bigNames, names);
+console.log(names.map((name) => name.toUpperCase()));
+
+//?-------------- ÖRNEK -------------------
+//? tlFiyatlar dizisindeki rakamlarin Euro ve dolar
+//? karsiliklarini hesaplatarak yeni dizelere kaydediniz
+
+const euro = 18.23;
+const dolar = 18.19;
+const tlPrices = [100, 150, 100, 50, 80];
+
+const euroPrices = tlPrices.map((tl) => Number((tl / euro).toPrecision(3)));
+console.log(euroPrices);
 
 //* ======================================================
 //*                CHAINING (PIPELINE)
