@@ -68,3 +68,28 @@ const findStudentsOf = (arr, search) => {
 
 const studentName = prompt("Please enter a name").toLowerCase();
 console.log(findStudentsOf(students, studentName));
+
+//! FOREACH METODU //
+//?dizideki herbir fiyatı konsola bastırınız
+
+const prices = [100, 250, 50, 89];
+
+prices.forEach((p) => console.log(p));
+
+//? ORNEKÇ prices dizisindekilerin toplamini konsola yazdiriniz. */
+
+//* ======================================================
+//*                       MAP METHOD
+//* ======================================================
+
+//* ======================================================
+//*                CHAINING (PIPELINE)
+//* ======================================================
+
+//* ======================================================
+//*                 FILTER METHOD
+//* ======================================================
+
+//* ======================================================
+//*                 REDUCE METHOD
+//* ======================================================
