@@ -16,11 +16,55 @@ console.log(negatifler);
 console.log(pozitifler);
 //?--------------- ÖRNEK ---------------------
 
-
 //? Dizideki notlarin ortalamasini hesaplayiniz.
 const notlar = [55, 77, 23, 89, 100];
 
-let toplam =0
-for(let i = 0; i < notlar.lenght i ++){
-    toplam+=
+let toplam = 0;
+for (let i = 0; i < notlar.lenght; i++) {
+  toplam += notlar[i];
 }
+console.log("ORTALAMA:", toplam / notlar.length);
+
+//*-------------------------------------------------------
+//* SORU: Ogrenciler dizisinde ogrenci isimleri saklanmaktadir.
+//* ogrencileri aramamizi saglayacak ve aranilan ogrenciden
+//* ne kadar sayida bulunuldugunu  ana programa döndürecek bir
+//* fonksiyonu yaziniz. Eger aranilan isimde bir ogrenci yok ise
+//* fonksiyon "ogrenci bulunamadi" dondurulmelidir.
+//*--------------------------------------------------------
+
+const students = ["ahmet", "mehmet", "ismet", "ahmet", "can", "mehmet", "cem"];
+
+const findStudents = (arr, search) => {
+  let counter = 0;
+  for (let i in arr) {
+    if (search === arr[i]) {
+      counter++;
+    }
+  }
+  if (counter === 0) {
+    return `${search} can not be found`;
+  } else {
+    return `${search} found ${counter} times`;
+  }
+};
+
+const name = prompt("Please enter a name").toLowerCase();
+console.log(findStudents(students, name));
+
+const findStudentsOf = (arr, search) => {
+  let counter = 0;
+  for (let item in arr) {
+    if (search === item) {
+      counter++;
+    }
+  }
+  if (counter === 0) {
+    return `${search} can not be found`;
+  } else {
+    return `${search} found ${counter} times`;
+  }
+};
+
+const name = prompt("Please enter a name").toLowerCase();
+console.log(findStudents(students, name));
