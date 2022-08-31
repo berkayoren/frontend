@@ -48,23 +48,23 @@ const findStudents = (arr, search) => {
     return `${search} found ${counter} times`;
   }
 };
-
 const name = prompt("Please enter a name").toLowerCase();
 console.log(findStudents(students, name));
 
 const findStudentsOf = (arr, search) => {
   let counter = 0;
-  for (let item in arr) {
-    if (search === item) {
-      counter++;
-    }
+  for (let item of arr) {
+    //? Ternary
+    // search ===item ? counter++ : null;
+    //! Short-circuit yöntemi &&=> kosul dogru ise ifadeyi calistirir.
+    search === item && counter++;
+    //! Short-circuit yöntemi &&=> kosul yanlis ise ifadeyi calistirir.
+    // search === item || counter--;
   }
-  if (counter === 0) {
-    return `${search} can not be found`;
-  } else {
-    return `${search} found ${counter} times`;
-  }
+  return !counter
+    ? `${search} can not be found`
+    : `${search} found ${counter} times`;
 };
 
-const name = prompt("Please enter a name").toLowerCase();
-console.log(findStudents(students, name));
+const studentName = prompt("Please enter a name").toLowerCase();
+console.log(findStudentsOf(students, studentName));
