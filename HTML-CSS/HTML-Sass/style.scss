@@ -4,6 +4,62 @@
   padding: 0;
 }
 
+//**/
+//* Variable Usage
+//**/
+$fontSize: 1.2rem;
+$bgColor: pink;
+$fontColor: white;
+$navBgColor: #30a7c3;
+$fontFamily: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$bannerBgColor: hotpink;
+$myBorder: 2px solid red;
+
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: $fontFamily;
+  background-color: $bgColor;
+  font-size: $fontSize;
+  color: $fontColor;
+}
+
+//**************header
+
+header {
+  background-color: $navBgColor;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  img {
+    width: 80px;
+    border: $myBorder;
+    border-radius: 10px;
+  }
+  ul {
+    list-style-type: none;
+    li {
+      display: inline-block;
+      padding: 0.5rem;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  a {
+    color: $fontColor;
+    text-decoration: none;
+  }
+}
+
+//*************banner
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  background-color: $bannerBgColor;
+  aside {
+  }
+  img {
+    width: 50%;
+  }
 }
