@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../scss/base/_reset.scss","../scss/components/_nav.scss","../scss/abstracts/_variables.scss","../scss/abstracts/_mixins.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;;;ACGF;EAEE;EACA;;AAEA;EACE;;AAEF;EACE;EACA;;AAEF;EACE;EACA;EACA;EACA,aCXU;ECNZ;;AFqBE;EACE;;AAGF;EACE,OCzBY","file":"main.css"}
