@@ -169,6 +169,9 @@ console.log("Salary of P2:", people.person2.salary);
 
 //? Javascript'de Objeler default olarak iterable degildir.
 //? Ama for in ve for of donguleri ile itere edilebilirler.
+console.log(Object.keys(people));
+console.log(Object.values(people));
+console.log(Object.entries(people));
 
 //! FOR - IN
 //* for (key in object) {
@@ -185,6 +188,20 @@ for (let person in people) {
 //*    code block to be executed
 //* }
 
-for (let person of people) {
-  console.log(person);
+for (let key of Object.keys(people)) {
+  console.log(key);
 }
+
+for (let v of Object.values(people)) {
+  console.log(v.salary);
+  //   console.log(v["salary"]);
+}
+
+for (let [k, v] of Object.entries(people)) {
+  console.log(`${k} - ${v.salary}`);
+  //   console.log(v["salary"]);
+}
+
+//! ARRAY METODLARI ILE
+
+Object.keys(people).forEach((p) => console.log(p));
