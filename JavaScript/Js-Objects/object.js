@@ -113,3 +113,5 @@ const personal = {
 
 console.log("Age:", personal.calculateAge());
 console.log("SUMMARY:", personal.summary());
+
+Array.filter((x) => console.log(x));
