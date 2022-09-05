@@ -148,7 +148,7 @@ console.log(products);
 //* ======================================================
 //*                 FILTER METHOD
 //* ======================================================
-const salaries = [5500, 8000, 9000, 10000, 15000, 25000];
+const salaries = [5500, 8000, 9000, 6500, 10000, 15000, 25000];
 
 //?-------------- ÖRNEK -------------------
 //? Maasi 10000'den buyuk olanlari ayri bir diziye saklayalim
@@ -174,3 +174,20 @@ salaries
 //* ======================================================
 //*                 REDUCE METHOD
 //* ======================================================
+
+// const salaries = [5500, 8000, 6500,9000, 10000, 15000, 25000];
+
+const sumOfSalaries = salaries.reduce((acc, val) => acc + val, 0);
+console.log(sumOfSalaries);
+
+//? Ornek 9000 tlden az maaşlara %10zam yap toplam kaç Tl tuttuğunu hesapla
+
+const sumOfRaisedSal = salaries
+  .filter((sal) => sal <= 9000)
+  .map((sal) => Math.trunc(sal * 1.1))
+  .reduce((acc, salary) => acc + salary, 0);
+console.log("sum of raised salaries", sumOfRaisedSal);
+
+//? • Array.reduce() metodu, bir fonksiyonu parametre olarak alır ve orijinal diziyi bu fonksiyona göre işleyerek tek bir değer döndürür.
+//? • Örneğin bir dizinin değerlerinin toplamını bulmak için reduce() metodu kullanılabilir.
+//? • reduce() metodu orijinal diziyi değiştirmez Sadece bir değer döndürür.
