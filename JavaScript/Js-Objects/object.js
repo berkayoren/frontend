@@ -141,7 +141,7 @@ const people = {
   person1: {
     name: "Can",
     surname: "Canan",
-    dob: "1990",
+    dob: "1991",
     job: "developer",
     salary: "140000",
     drivingLicense: true,
@@ -156,9 +156,9 @@ const people = {
   },
   person3: {
     name: "Steve",
-    surname: "Job",
+    surname: "Jobs",
     dob: "2000",
-    job: "QA",
+    job: "developer",
     salary: "90000",
     drivingLicense: true,
   },
@@ -205,3 +205,9 @@ for (let [k, v] of Object.entries(people)) {
 //! ARRAY METODLARI ILE
 
 Object.keys(people).forEach((p) => console.log(p));
+
+Object.values(people).forEach((p) => console.log(p.surname));
+
+Object.values(people)
+  .filter((p) => p.job === "developer")
+  .forEach((p) => console.log(p.dob));
