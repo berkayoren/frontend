@@ -123,5 +123,68 @@ const personal = {
 //! gösterir. Bunu engellemek için object fonksiyonlarini tanimlarken
 //! diger (func. expression veya declaration) yontemlerini kullanabilir.
 
+// Limitations of using Arrow functions: Following are the certain limitations of using an arrow function:
+// An arrow function doesn’t have its own bindings with this or super.
+// An Arrow function should not be used as methods.
+// An arrow function can not be used as constructors.
+// An arrow function can not use yield within its body.
+// Arrow function cannot be suitable for call apply and bind methods.
+
 console.log("Age:", personal.calculateAge());
 console.log("SUMMARY:", personal.summary());
+
+//*=========================================
+//* OBJECT ITERATION
+//*==========================
+
+const people = {
+  person1: {
+    name: "Can",
+    surname: "Canan",
+    dob: "1990",
+    job: "developer",
+    salary: "140000",
+    drivingLicense: true,
+  },
+  person2: {
+    name: "John",
+    surname: "Sweet",
+    dob: "1990",
+    job: "tester",
+    salary: "110000",
+    drivingLicense: false,
+  },
+  person3: {
+    name: "Steve",
+    surname: "Job",
+    dob: "2000",
+    job: "QA",
+    salary: "90000",
+    drivingLicense: true,
+  },
+};
+
+console.log(people); //? {person1: {...}, person2: {...}}
+console.log("Salary of P2:", people.person2.salary);
+
+//? Javascript'de Objeler default olarak iterable degildir.
+//? Ama for in ve for of donguleri ile itere edilebilirler.
+
+//! FOR - IN
+//* for (key in object) {
+//*   // code block to be executed
+//* }
+
+for (let person in people) {
+  console.log(person);
+  console.log(people[person]);
+}
+
+//! FOR - OF
+//* for (x of iterable){
+//*    code block to be executed
+//* }
+
+for (let person of people) {
+  console.log(person);
+}
