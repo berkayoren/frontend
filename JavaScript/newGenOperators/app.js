@@ -117,6 +117,50 @@ console.log(p1, p2, p4);
 //*  REST (...)
 //* ======================================================
 
+//? REST operatoru kullanici tarafindan girilen degerleri dizi
+//? icerisine konumlandirir. Cesitli kullanim alanlari vardir.
+
+//! 1- Bir dizi veya object'deki bazi degerlerden geri kalanlarini
+//!    ayri dizi yada objelere kopyalanmasini saglayabilir.
+
+//* REST: (Arrays) geriye kalan
+const autos = ["anadol", "reno", "bmw", "mercedes", "ferrari"];
+
+const [anadol, reno, ...restAutos] = autos;
+console.log(reno, anadol);
+console.log(restAutos);
+
+//* REST (Objects)
+const personel = {
+  pName: "John",
+  surname: "Smith",
+  job: "developer",
+  age: 30,
+};
+const { pName, job, ...ageSurname } = personel;
+console.log(ageSurname);
+console.log(pName, job);
+
+//! 2- Bir fonksiyonun argumanlarini diziye cevirmek icin kullanabilirler
+
+const sum = (x, y) => x + y;
+//? hata vermez fakat sadee 2 argumani toplar
+console.log(sum(1, 2, 3, 4, 5, 6));
+
+const sumAll = (...numbers) => {
+  console.log(numbers); //? dizi (array) haline getirdi
+  return numbers.reduce((a, b) => (a += b), 0);
+};
+console.log("Sum of Numbers:", sumAll(1, 2, 3, 4, 5, 6));
+
+const showName = (name, surname, ...titles) => {
+  console.log(titles);
+  const summary = `${name}${surname} is a ${titles.join(" and ")}`;
+  console.log(summary);
+};
+
+showName("Noah", "Adams", "Developer", "Instr", "Professor", "Dad");
+
 //*======================================================
 //*  SPREAD (...)
 //* ======================================================
