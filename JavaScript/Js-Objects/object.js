@@ -211,3 +211,47 @@ Object.values(people).forEach((p) => console.log(p.surname));
 Object.values(people)
   .filter((p) => p.job === "developer")
   .forEach((p) => console.log(p.dob));
+
+//***********************************
+//* JSON => Javasctipr Obkect Notation
+//***********************************
+
+const team = [
+  {
+    name: "Josh",
+    surname: "Adams",
+    job: "developer",
+    age: 30,
+  },
+  {
+    name: "Mary",
+    surname: "Bary",
+    job: "tester",
+    age: 22,
+  },
+  {
+    name: "Hazel",
+    surname: "Nut",
+    job: "developer",
+    age: 20,
+  },
+]; //JSON
+console.log(team);
+console.log(team[2]);
+
+//* Ornek1: team dizindeki joblari yazdir
+team.forEach((person) => console.log(person.job));
+
+//* Ornek2: ageleri bir artirarak yeni bir diziye saklayiniz.
+const ages = team.map((p) => p.age + 1);
+console.log(ages);
+
+//* Ornek3: name ve surname'leri birlestirip buyuk harfe ceviren ve
+//* bunu fullName key'i olarak saklayan, ayni zamanda age degerlerini 5
+//* arttirarak age key'ine saklayan ve olusan diziyi donduren kodu yazınız.
+
+const teamFullName = team.map((p) => ({
+  fullName: p.name.toLocaleUpperCase() + " " + p.surname.toUpperCase(),
+  age: p.age + 5,
+}));
+console.log(teamFullName);
