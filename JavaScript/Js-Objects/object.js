@@ -271,3 +271,12 @@ console.log(teamFullName);
 team.filter((p) => p.age <= 22).forEach((p) => console.log(p.name));
 
 //* Ornek5: 22 yasindan kücük ve esit olanların isimlerini diziye saklayınız.
+
+const teamUnder22 = team.filter((x) => x.age <= 22).map((p) => p.name);
+console.log(teamUnder22);
+
+//* Ornek6 ort. yasi hesaplayiniz.
+
+const avgAges =
+  team.reduce((sum, person) => (sum += person.age), 0) / team.length;
+console.log(avgAges);
