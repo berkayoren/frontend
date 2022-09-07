@@ -62,6 +62,25 @@ const team = [
     age: 40,
   },
 ];
+//* CLASSICAL
+team.forEach((p) => {
+  console.log("******1*****");
+  console.log("Name:", p.name);
+  console.log("Surame:", p.surname);
+  console.log("Job:", p["job"]);
+  console.log("Age:", p.age);
+});
+
+//* DESTRUCTURING
+
+team.forEach((p) => {
+  const { name, surname, job, age } = p;
+  console.log("******2*****");
+  console.log("Name:", name);
+  console.log("Surame:", surname);
+  console.log("Job:", job);
+  console.log("Age:", age);
+});
 
 //* ======================================================
 //*  DESTRUCTURING (ARRAY)
