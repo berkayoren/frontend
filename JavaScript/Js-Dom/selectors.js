@@ -89,3 +89,6 @@ document.querySelector("#btn").style.cursor = "pointer";
 
 const itemH2 = document.querySelector(".item-list h2");
 itemH2.style.color = "purple";
+
+const myBtn = document.querySelector("input[type='button']");
+console.log(myBtn);
