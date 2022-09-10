@@ -45,3 +45,26 @@ console.log(list[1].innerText);
 list[4].innerHTML = "<a href=`https://www.clarusway.com`>Clarusway</a>";
 
 //*=====================
+//*         GETELEMENTSBYCLASSNAME()
+//*=================
+
+//* EXAMPLE-4
+//*-----------------------------
+const myList = document.getElementsByClassName("list");
+console.log(myList); //? HTML Colleciton
+console.log(myList[0].innerText);
+
+//? Dizi metotlari dogrudan kullanilamaz.
+//? Spread ve Array.from() ile kullanilabilir hale gelir.
+
+//?Array.from()
+const myListArr = Array.from(myList);
+myListArr.forEach((item) => console.log(item.innerText));
+//? Spread
+[...myList].forEach((item) => console.log(item.innerText));
+
+[...myList].forEach((item) => (item.style.color = "red"));
+
+//*===============================
+//*         QuERYSELECTOR()
+//*================================
