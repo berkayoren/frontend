@@ -48,14 +48,25 @@ document.getElementById("btn").addEventListener("click", function () {
 const list = document.querySelectorAll(".list"); //?Nodelist
 
 list.forEach((li) => {
+  li.style.transition = "all 0.8s";
+  li.style.lineHeight = "2rem";
+
   li.onmouseover = () => {
     li.style.fontSize = "2rem";
+    li.style.transform = "translateX(10px)";
   };
 
   li.onmouseout = () => {
     li.style.fontSize = "1rem";
+    li.style.transfrom = "translateX(-10px";
   };
 });
+
+//* EXAMPLE-4 (onload)
+//*----------------------------
+window.onload = function () {
+  document.querySelector("#input").focus();
+};
 
 const print = () => {
   console.log("starting");
