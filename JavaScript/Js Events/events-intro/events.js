@@ -20,6 +20,7 @@ h1.onmouseout = () => {
   h1.style.fontWeight = "900";
 };
 
+//? 4. Metod (addEventListener)
 h1.addEventListener("click", () => {
   alert("H1 Pressed");
 });
@@ -41,3 +42,23 @@ document.getElementById("btn").addEventListener("click", function () {
   //?Add yaptıktan sonra silme
   input.value = "";
 });
+
+//* EXAMPLE-3
+//*--------------------------------------------
+const list = document.querySelectorAll(".list"); //?Nodelist
+
+list.forEach((li) => {
+  li.onmouseover = () => {
+    li.style.fontSize = "2rem";
+  };
+
+  li.onmouseout = () => {
+    li.style.fontSize = "1rem";
+  };
+});
+
+const print = () => {
+  console.log("starting");
+};
+
+print();
