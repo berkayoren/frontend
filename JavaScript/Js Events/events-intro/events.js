@@ -26,3 +26,18 @@ h1.addEventListener("click", () => {
 
 //* EXAMPLE-2 (addEventListener())
 //* -------------------------------------------------
+
+document.getElementById("btn").addEventListener("click", function () {
+  const input = document.querySelector("#input");
+  !input.value
+    ? alert("Please enter an item")
+    : alert(`${input.value} entered`);
+  //   if (!input.value) {
+  //     alert("Please Enter an Item");
+  //   } else {
+  //     alert(`${input.value} entered`);
+  //   }
+
+  //?Add yaptıktan sonra silme
+  input.value = "";
+});
