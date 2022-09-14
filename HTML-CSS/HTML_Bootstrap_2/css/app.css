@@ -115,4 +115,5 @@ footer i:hover {
 
 .btn-up:hover {
   color: black;
+  transform: scale(1.3);
 }
