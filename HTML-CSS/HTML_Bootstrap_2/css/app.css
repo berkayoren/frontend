@@ -66,6 +66,11 @@
 }
 /*! ----------- 4- STUDENTS SECTION ----------*/
 
+section#students img {
+  max-width: 400px;
+  min-width: 200px;
+}
+
 /*! ----------- 5- COURSES SECTION ----------- */
 
 /*! ----------- 6- CONTACT SECTION ------------ */
