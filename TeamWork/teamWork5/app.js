@@ -34,13 +34,13 @@
 
 // const middle = (yen) => {
 //   let yeni = yen.split("");
-  //   if (yeni.length % 2) {
-  //     console.log(yeni[Math.floor(yeni.length / 2)]);
-  //   } else {
-  //     console.log(
-  //       yeni[Math.floor(yeni.length / 2 - 1)] + yeni[Math.floor(yeni.length / 2)]
-  //     );
-  //   }
+//   if (yeni.length % 2) {
+//     console.log(yeni[Math.floor(yeni.length / 2)]);
+//   } else {
+//     console.log(
+//       yeni[Math.floor(yeni.length / 2 - 1)] + yeni[Math.floor(yeni.length / 2)]
+//     );
+//   }
 //   return yeni.length % 2 === 0
 //     ? yeni[Math.floor(yeni.length / 2 - 1)] + yeni[Math.floor(yeni.length / 2)]
 //     : yeni[Math.floor(yeni.length / 2)];
@@ -63,17 +63,24 @@ Beispiel => "terminal" --> true
 //   console.log("true");
 // } else {
 //   console.log("false");
-}
+// }
 
 /* girilen sayilari kendi degerlerine göre degilde basamak toplamlarinin degerine göre sort eden bir program yazi
 Beispeil => '56 65 74 100 99 68 86 180 90' ---> '100', '180', '90', '56', '65', '74', '68', '86', '99'
 */
 
-const sayi= "56 65 74 100 99 68 86 180 90".split()
+const sayi = "56 65 74 100 99 68 86 180 90".split();
 
-const arr= sayi.map((e)=>{
-  return{
-    key:e,
-    val:
-  }
-})
+const arr = sayi.map((e) => {
+  console.log(e.split("").reduce((a, b) => parseFloat(a) + parseFloat(b)));
+  return {
+    key: e,
+    val: e.split("").reduce((a, b) => parseFloat(a) + parseFloat(b)),
+  };
+});
+console.log(
+  arr
+    .sort((a, b) => a.val - b.val)
+    .map((e) => e.key)
+    .join(" ")
+);
