@@ -69,18 +69,30 @@ Beispiel => "terminal" --> true
 Beispeil => '56 65 74 100 99 68 86 180 90' ---> '100', '180', '90', '56', '65', '74', '68', '86', '99'
 */
 
-const sayi = "56 65 74 100 99 68 86 180 90".split();
+// const sayi = "56 65 74 100 99 68 86 180 90".split(" ");
 
-const arr = sayi.map((e) => {
-  console.log(e.split("").reduce((a, b) => parseFloat(a) + parseFloat(b)));
-  return {
-    key: e,
-    val: e.split("").reduce((a, b) => parseFloat(a) + parseFloat(b)),
-  };
-});
-console.log(
-  arr
-    .sort((a, b) => a.val - b.val)
-    .map((e) => e.key)
-    .join(" ")
-);
+// const arr = sayi.map((e) => {
+//   //console.log(e.split('').reduce((a, b) => parseFloat(a) + parseFloat(b)));
+//   return {
+//     key: e,
+//     val: e.split("").reduce((a, b) => parseFloat(a) + parseFloat(b)),
+//   };
+// });
+
+// console.log(
+//   arr
+//     .sort((a, b) => a.val - b.val)
+//     .map((e) => e.key)
+//     .join(" ")
+// );
+
+// * girilen string ifadenin kelimelerinin ilk ve son harfi haric diğer harflerini gizleyen bir fonksiyon yazınız
+
+const vorName = "Berkay Ören".split("");
+let newName = "";
+console.log(vorName);
+
+for (i of vorName) {
+  newName += i[0] + "*".repeat(i.length - 1);
+}
+console.log(newName);
