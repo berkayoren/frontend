@@ -20,7 +20,7 @@ productsDiv.addEventListener("click", (event) => {
     // console.log("minus btn is clicked");
     if (event.target.parentElement.querySelector(".quantity").innerText > 1) {
       event.target.parentElement.querySelector(".quantity").innerText--;
-      calculateProductPrice();
+      calculateProductPrice(event.target);
       calculateCartPrice();
     } else {
       if (confirm("Do you want to remove the product?")) {
@@ -33,7 +33,7 @@ productsDiv.addEventListener("click", (event) => {
   } else if (event.target.classList.contains("fa-plus")) {
     // console.log("plus btn is clicked");
     event.target.previousElementSibling.innerText++;
-    calculateProductPrice();
+    calculateProductPrice(event.target);
     calculateCartPrice();
   } else if (event.target.className == "remove-product") {
     event.target.parentElement.parentElement.parentElement.remove();
@@ -44,6 +44,12 @@ productsDiv.addEventListener("click", (event) => {
   }
 });
 
-const calculateProductPrice = () => {};
+const calculateProductPrice = (clickedBtn) => {
+  //   console.log(clickedBtn);
+  const productInfoDiv = clickedBtn.parentElement.parentElement;
+  //   console.log(productInfoDiv);
+  const price = productInfoDiv.querySelector(".product-price strong").innerText;
+  alert(price);
+};
 
 const calculateCartPrice = () => {};
