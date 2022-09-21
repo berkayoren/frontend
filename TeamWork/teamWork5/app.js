@@ -88,11 +88,12 @@ Beispeil => '56 65 74 100 99 68 86 180 90' ---> '100', '180', '90', '56', '65', 
 
 // * girilen string ifadenin kelimelerinin ilk ve son harfi haric diğer harflerini gizleyen bir fonksiyon yazınız
 
-const vorName = "Berkay Ören".split("");
+const name = "Alex De Souza".split(" ");
 let newName = "";
-console.log(vorName);
 
-for (i of vorName) {
-  newName += i[0] + "*".repeat(i.length - 1);
+for (i of name) {
+  console.log(i.split(""));
+  newName += i.split("")[0] + "*".repeat(i.split("").length - 1) + " ";
 }
+
 console.log(newName);
