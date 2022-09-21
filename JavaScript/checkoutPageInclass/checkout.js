@@ -14,40 +14,38 @@ window.addEventListener("load", () => {
 });
 
 const productsDiv = document.querySelector(".products");
-//* Capturing vs. Bubbling
+//Capturing vs. Bubbling
 productsDiv.addEventListener("click", (event) => {
   if (event.target.className == "fa-solid fa-minus") {
-    // console.log("minus btn is clicked");
+    //console.log("minus btn is clicked!");
     if (event.target.parentElement.querySelector(".quantity").innerText > 1) {
       event.target.parentElement.querySelector(".quantity").innerText--;
       calculateProductPrice(event.target);
       calculateCartPrice();
     } else {
-      if (confirm("Do you want to remove the product?")) {
-        //* remove
+      if (confirm("Product will be removed???")) {
+        //remove
         event.target.parentElement.parentElement.parentElement.remove();
         calculateCartPrice();
       }
     }
-    event.target.parentElement.querySelector(".quantity").innerText--;
   } else if (event.target.classList.contains("fa-plus")) {
-    // console.log("plus btn is clicked");
+    //console.log("plus btn is clicked!");
     event.target.previousElementSibling.innerText++;
     calculateProductPrice(event.target);
     calculateCartPrice();
   } else if (event.target.className == "remove-product") {
+    //console.log("remove btn is clicked!");
     event.target.parentElement.parentElement.parentElement.remove();
     calculateCartPrice();
-    // console.log("remove btn is clicked");
   } else {
-    // console.log("other element is clicked");
+    //console.log("other element is clicked!");
   }
 });
 
 const calculateProductPrice = (clickedBtn) => {
-  //   console.log(clickedBtn);
   const productInfoDiv = clickedBtn.parentElement.parentElement;
-  //   console.log(productInfoDiv);
+  //console.log(productInfoDiv);
   const price = productInfoDiv.querySelector(".product-price strong").innerText;
   alert(price);
 };
