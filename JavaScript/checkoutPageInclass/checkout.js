@@ -3,6 +3,7 @@
 // const shippingFreePrice = 300;
 
 window.addEventListener("load", () => {
+  calculateCartPrice();
   //   // set iterms to LocalStorage
   //   localStorage.setItem("taxRate", taxRate);
   //   localStorage.setItem("shippingPrice", shippingPrice);
@@ -68,10 +69,11 @@ const calculateCartPrice = () => {
   //console.log(subtotal);
   const taxPrice = subtotal * localStorage.getItem("taxRate");
 
-  const shippingPrice =
+  const shippingPrice = parseFloat(
     subtotal > 0 && subtotal < localStorage.getItem("shippingFreePrice")
       ? localStorage.getItem("shippingPrice")
-      : 0;
+      : 0
+  );
 
   console.log(shippingPrice);
 
