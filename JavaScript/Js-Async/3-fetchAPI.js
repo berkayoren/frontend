@@ -12,6 +12,14 @@
 
 console.log("FETCH");
 fetch("https://api.github.com/usrs")
-  .then((res) => res.json)
+  .then((res) => {
+    console.log(res);
+    //! Error handling
+    if (!res.ok) {
+      throw new Error("Something went wrong");
+    }
+
+    return res.json();
+  })
   .then((data) => console.log(data))
-  .catch(() => console.log("Something went wrong"));
+  .catch((hata) => console.log(hata));
