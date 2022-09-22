@@ -19,4 +19,15 @@
 //* Senkron
 //* ------------------------------------------------
 
-console.log("Timeout-Interval");
+const bekle = (waitingTime) => {
+  const startTime = new Date().getTime();
+  while (new Date().getTime() < startTime + waitingTime) {}
+};
+
+console.log("Hello");
+// alert("CW"); //! blocking code
+
+console.time("timer");
+bekle(3000); //! blocking code
+console.timeEnd("timer");
+console.log("FS12");
