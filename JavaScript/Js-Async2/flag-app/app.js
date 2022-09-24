@@ -48,9 +48,10 @@ const renderCountries = (data) => {
     <li class="list-group-item"><i class="fa-solid fa-comments"></i>${Object.values(
       languages
     )}</li>
-    <li class="list-group-item"><i class="fas fa-lg fa-money-bill-wave"></i>${
-      Object.values(currencies)[0].name
-    }, ${Object.values(currencies)[0].symbol},</li>
+    <li class="list-group-item">
+   <i class="fas fa-lg fa-money-bill-wave"></i>
+    ${Object.values(currencies).map((item) => Object.values(item) + " ")}
+ </li>
   </ul>
 </div>`;
 };
