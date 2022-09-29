@@ -54,3 +54,22 @@ console.log(book1, book2);
 console.log(book1, book2);
 console.log(book1.getAge());
 console.log(book2.getAge());
+
+//? INHEERITANCE (Kalitim - ES5)
+//?--------------------------------------------
+
+//? Sub-class
+
+function Magazine(title, author, year, month) {
+  Book.call(this, title, author, year);
+  this.month = month;
+}
+
+Magazine.prototype = Object.create(Book.prototype);
+
+//? Magazine objesinin yeni bir instance
+
+const mag1 = new Magazine("Scientific Research", "Einstein", 1926, "Sep");
+console.log(mag1);
+
+console.log(mag1.getSummary());
