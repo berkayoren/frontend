@@ -13,9 +13,9 @@ function Book(title, author, year) {
   this.title = title;
   this.author = author;
   this.year = year;
-  this.getSummary = function () {
-    return `${this.title} was written by ${this.author} in ${this.year}`;
-  };
+  //   this.getSummary = function () {
+  //     return `${this.title} was written by ${this.author} in ${this.year}`;
+  //   };
 }
 
 //? new keyword'u Book Constructor'ini parameterler ile cagirmaktadir.
@@ -27,4 +27,20 @@ function Book(title, author, year) {
 const book1 = new Book("Kasagi", "Omer Seyfettin", 1920);
 const book2 = new Book("Sinekli Bakkal", "H. Edip Adıvar", 1930);
 
+Book.prototype.getAge = function () {
+  return new Date().getFullYear() - this.year;
+};
+
+Book.prototype.getSummary = function () {
+  return `${this.title} was written by ${this.author} in ${this.year}`;
+};
+
 console.log(book1);
+console.log(book1.getSummary());
+
+book1.price = 100;
+console.log(book1, book2);
+
+console.log(book1, book2);
+console.log(book1.getAge());
+console.log(book2.getAge());
