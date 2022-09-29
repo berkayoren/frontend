@@ -35,10 +35,20 @@ Book.prototype.getSummary = function () {
   return `${this.title} was written by ${this.author} in ${this.year}`;
 };
 
+Book.prototype.price = 100;
+// book1.price = 100;
+
+//* Ornegin Book nesnesinin tum instance'lari getAge() fonksiyonunu miras alabilir.
+//* Ancak, getAge() fonksiyonu bellekte sadece bir yer kaplamaktadir.
+//* Bir nesnenin prototiplerine .prototype ile erisilebilir.
+//* Ancak bir instance'in prototiplerine .__proto__ ile erisilmektedir.
+
+console.log(Book.prototype);
+console.log(book1.__proto__);
+
 console.log(book1);
 console.log(book1.getSummary());
 
-book1.price = 100;
 console.log(book1, book2);
 
 console.log(book1, book2);
