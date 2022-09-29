@@ -65,6 +65,7 @@ function Magazine(title, author, year, month) {
   this.month = month;
 }
 
+//! Prototipleri miras almak icin Object.create() metodu kullanılabilir.
 Magazine.prototype = Object.create(Book.prototype);
 
 //? Magazine objesinin yeni bir instance
@@ -72,4 +73,7 @@ Magazine.prototype = Object.create(Book.prototype);
 const mag1 = new Magazine("Scientific Research", "Einstein", 1926, "Sep");
 console.log(mag1);
 
+//! prototipler dogrudan miras olarak gelmez.
 console.log(mag1.getSummary());
+console.log(mag1.getAge());
+console.log(mag1.price);
