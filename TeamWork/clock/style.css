@@ -1,0 +1,10 @@
+body {
+  background-color: black;
+}
+.container {
+  color: lime;
+  text-align: center;
+  margin-top: 200px;
+  font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+}
