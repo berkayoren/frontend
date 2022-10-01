@@ -46,6 +46,15 @@ class Book {
   setId(id) {
     this.#id = id;
   }
+  getSummary() {
+    return `${this.title} was written by ${
+      this.author
+    } so its age is ${this.#computeAge()}`;
+  }
+  //! Private metot tanimlamasi
+  #computeAge() {
+    return new Date().getFullYear() - this.year;
+  }
 }
 
 const book1 = new Book("Simyaci", "Poelho Coelgo", 1988);
@@ -60,3 +69,8 @@ console.log(book1.getId());
 //? Private degiskene deger atama
 book1.setId("00000");
 console.log(book1.getId());
+
+//! Private metotlar class disarisindan erisilemezler. Ancak class icerisindeki bir metottan erisilebilirler.
+// console.log(book1.#computeAge());
+
+console.log(book1.getSummary());
