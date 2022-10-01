@@ -42,6 +42,9 @@ class Book {
   getId() {
     return this.#id;
   }
+  //? Class icerisinde public metotlar yardimiyla private degiskenler okunabilir
+  //? Bu tip metotlasra setter metot denilir
+  //! setter metotlari class icerisinde tanimlamalidir
 
   setId(id) {
     this.#id = id;
