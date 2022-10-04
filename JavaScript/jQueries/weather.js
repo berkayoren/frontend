@@ -33,7 +33,7 @@ $(document).ready(() => {
   console.log("DOMContentLoaded");
   localStorage.setItem(
     "apiKey",
-    EncryptStringAES("4fe421f798cb1c4f14dd3423ae2428f6")
+    EncryptStringAES("these are not the droid you're looking for")
   );
 });
 
@@ -119,12 +119,12 @@ const getWeatherDataFromApi = () => {
       //     $(e.target).animate({ left: "250px" });
       //   });
       //Jquery chaining
-      $(".city img").click((e) => {
-        $(e.target).hide();
-      });
       //   $(".city img").click((e) => {
-      //     $(e.target).slideUp(2000).slideDown(2000);
+      //     $(e.target).hide();
       //   });
+      $(".city img").click((e) => {
+        $(e.target).slideUp(2000).slideDown(2000);
+      });
       //hide() vs show()
 
       //   formJS.reset();
