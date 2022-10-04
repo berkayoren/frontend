@@ -107,12 +107,26 @@ const getWeatherDataFromApi = () => {
         </figure>`);
       //append vs. prepend both in JS and JQUERY
       listJQ.prepend(createdLi);
-
+      msgJQ.text("");
       //Jquery Samples
+      //   $(".city img").click((e) => {
+      // getAttribute, setAttribute ==>
+      //     window.location.href = $(e.target).attr("src");
+      // $(e.target).attr("src", iconUrlAWS);
+      //   });
+      // Animation
+      //   $(".city").click((e) => {
+      //     $(e.target).animate({ left: "250px" });
+      //   });
+      //Jquery chaining
       $(".city img").click((e) => {
-        // getAttribute, setAttribute ==>
-        $(e.target).attr("src", iconUrlAWS);
+        $(e.target).hide();
       });
+      //   $(".city img").click((e) => {
+      //     $(e.target).slideUp(2000).slideDown(2000);
+      //   });
+      //hide() vs show()
+
       //   formJS.reset();
       formJquery.trigger("reset");
     },
