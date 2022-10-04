@@ -74,6 +74,8 @@ const getWeatherDataFromApi = () => {
       // js=>document.createElement("li")
 
       // const createdLi2 = $(document.createElement("li"))
+
+      //weather card control!!
       const createdLi = $("<li></li>");
       createdLi.addClass("city");
       createdLi.html(`
@@ -86,6 +88,10 @@ const getWeatherDataFromApi = () => {
             <img class="city-icon" src="${iconUrl}">
             <figcaption>${weather[0].description}</figcaption>
         </figure>`);
+      //append vs. prepend both in JS and JQUERY
+      listJQ.prepend(createdLi);
+      //   formJS.reset();
+      formJquery.trigger("reset");
     },
     beforeSend: (request) => {
       console.log("before ajax send");
