@@ -107,6 +107,12 @@ const getWeatherDataFromApi = () => {
         </figure>`);
       //append vs. prepend both in JS and JQUERY
       listJQ.prepend(createdLi);
+
+      //Jquery Samples
+      $(".city img").click((e) => {
+        // getAttribute, setAttribute ==>
+        $(e.target).attr("src", iconUrlAWS);
+      });
       //   formJS.reset();
       formJquery.trigger("reset");
     },
