@@ -31,6 +31,10 @@ $(window).on("load", () => {
 
 $(document).ready(() => {
   console.log("DOMContentLoaded");
+  localStorage.setItem(
+    "apiKey",
+    EncryptStringAES("4fe421f798cb1c4f14dd3423ae2428f6")
+  );
 });
 
 // formJquery.on("submit", (e)=>{
@@ -44,7 +48,53 @@ formJquery.submit((e) => {
 });
 
 const getWeatherDataFromApi = () => {
-  console.log("AJAX Func. is called");
-};
+  //  console.log("AJAX Func. is called");
+  const apiKey = DecryptStringAES(localStorage.getItem("apiKey"));
+  //JS .value == jQuery .val()
+  const cityName = inputJQ.val();
+  console.log(cityName);
+  const units = "metric";
+  const lang = "tr";
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}&lang=${lang}`;
 
-// XMLHTTPREQUEST(xhr) vs. fetch() vs. axios vs. $.ajax
+  // XMLHTTPREQUEST(xhr) vs. fetch() vs. axios vs. $.ajax
+
+  $.ajax({
+    type: "GET",
+    url: url,
+    dataType: "json",
+    success: (response) => {
+      //main body func.
+      console.log(response);
+
+      const { main, sys, name, weather } = response;
+      const iconUrlAWS = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0].icon}.svg`;
+      //alternative iconUrl
+      const iconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+      // js=>document.createElement("li")
+
+      // const createdLi2 = $(document.createElement("li"))
+      const createdLi = $("<li></li>");
+      createdLi.addClass("city");
+      createdLi.html(`
+        <h2 class="city-name" data-name="${name}, ${sys.country}">
+            <span>${name}</span>
+            <sup>${sys.country}</sup>
+        </h2>
+        <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+        <figure>
+            <img class="city-icon" src="${iconUrl}">
+            <figcaption>${weather[0].description}</figcaption>
+        </figure>`);
+    },
+    beforeSend: (request) => {
+      console.log("before ajax send");
+    },
+    complete: () => {
+      console.log("before ajax send");
+    },
+    error: (XMLHttpRequest) => {
+      console.log(XMLHttpRequest);
+    },
+  });
+};
