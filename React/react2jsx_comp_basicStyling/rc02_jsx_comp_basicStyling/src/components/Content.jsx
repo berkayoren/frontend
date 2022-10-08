@@ -9,6 +9,8 @@
 //* property isimlerinde camelCase kullanimalidir.
 //* class isimleri icin className kullanilir.
 //* Material UI, Styled Component, Sass, Bootstrap v.b harici kutuphaneler kullanilabilir.
+//? HArici stillendirme dosyasi
+import "./Content.css";
 
 // ? Dahili bir resim eklemek icin import yapmak gereklidir.
 import img2 from "../img/spring2.jpg";
@@ -35,6 +37,12 @@ const Content = () => {
         alt="img1"
       />
       <img style={imgStyle} src={img2} alt="" />
+      <p className="par-1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+        exercitationem ea doloribus voluptatibus ad culpa officia beatae, id
+        temporibus! Error quidem voluptas quaerat magnam est non dolorum ad
+        officiis exercitationem!
+      </p>
     </div>
   );
 };
