@@ -1,5 +1,5 @@
 const Msg = ({ name }) => {
-  //! Destructiring
+  //! Destructuring
   //   const { name } = props;
   return (
     <div>
