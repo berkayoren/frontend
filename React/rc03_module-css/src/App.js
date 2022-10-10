@@ -6,7 +6,7 @@ function App() {
     <>
       {data.map((item) => {
         const { id, language, img, btnName } = item; //! Destr
-        return <Card />;
+        return <Card key={id} language={language} img={img} btn={btnName} />;
       })}
     </>
   );
