@@ -1,7 +1,7 @@
 @import "./variables";
 
 .container {
-  border: 1px solid red;
+  margin-bottom: 7rem;
   text-align: center;
   .card {
     padding: 1.5rem;
@@ -23,7 +23,20 @@
     .buttons {
       button {
         border: none;
+        border-radius: 10px;
         cursor: pointer;
+        margin-right: 0.5rem;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+      &--small {
+        background-color: $olive;
+        padding: 0.7rem;
+      }
+      &--large {
+        background-color: $lightOrange;
+        padding: 0.7rem 1.5rem;
       }
     }
   }
