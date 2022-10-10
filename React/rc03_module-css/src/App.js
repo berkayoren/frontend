@@ -1,10 +1,13 @@
 import Card from "./components/card/Card";
+import data from "./util/data";
 
 function App() {
   return (
     <>
-      <h1>languages</h1>
-      <Card />
+      {data.map((item) => {
+        const { id, language, img, btnName } = item; //! Destr
+        return <Card />;
+      })}
     </>
   );
 }
