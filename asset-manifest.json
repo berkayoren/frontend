@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/berkayoren/tour-places.git/static/css/main.f5cf08f8.css",
+    "main.js": "/berkayoren/tour-places.git/static/js/main.7ce28fd6.js",
+    "static/js/787.4abacb58.chunk.js": "/berkayoren/tour-places.git/static/js/787.4abacb58.chunk.js",
+    "index.html": "/berkayoren/tour-places.git/index.html",
+    "main.f5cf08f8.css.map": "/berkayoren/tour-places.git/static/css/main.f5cf08f8.css.map",
+    "main.7ce28fd6.js.map": "/berkayoren/tour-places.git/static/js/main.7ce28fd6.js.map",
+    "787.4abacb58.chunk.js.map": "/berkayoren/tour-places.git/static/js/787.4abacb58.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f5cf08f8.css",
+    "static/js/main.7ce28fd6.js"
+  ]
+}
