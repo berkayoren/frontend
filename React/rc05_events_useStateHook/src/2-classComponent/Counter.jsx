@@ -15,8 +15,9 @@ class Counter extends Component {
   constructor(props) {
     super(props);
 
+    //! count state'ine basşangic deferi atadik
     this.state = {
-      count: 0,
+      count: props.count || 0,
     };
     //? increment metodunun Counter classina baglanmasi (bind)
     this.increment = this.increment.bind(this);
