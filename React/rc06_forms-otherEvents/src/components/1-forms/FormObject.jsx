@@ -7,6 +7,7 @@ const FormObject = () => {
     password: "",
   });
 
+  //? destr
   const { username, password, email } = formValues;
 
   const handleSubmit = (e) => {
@@ -18,21 +19,26 @@ const FormObject = () => {
           password:${password}
     `);
   };
-  const handleForm = () => {};
+  const handleForm = (e) => {
+    console.log(e.target.value);
+    console.log(e.target.name);
+    console.log(e.target.id);
+    setFormValues({ ...formValues, [e.target.id]: e.target.value });
+  };
 
   return (
     <form onSubmit={handleSubmit}>
       <h1 className="display-5 text-danger">FORM OBJECT</h1>
-
       <div className="mb-3">
         <label htmlFor="username" className="form-label">
           Username: <span className="text-danger">{username}</span>
         </label>
         <input
+          name="username"
           type="text"
           className="form-control"
           id="username"
-          value={formValues.username}
+          value={username}
           onChange={handleForm}
         />
       </div>
@@ -60,7 +66,6 @@ const FormObject = () => {
           onChange={handleForm}
         />
       </div>
-
       <button type="submit" className="btn btn-primary">
         Submit
       </button>
