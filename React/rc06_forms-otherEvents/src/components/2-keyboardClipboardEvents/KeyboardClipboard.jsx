@@ -1,11 +1,15 @@
 import { useState } from "react";
+
 const KeyboardClipboard = () => {
   const [inputValue, setInputValue] = useState("");
 
   const handleKeyDown = (e) => {
+    console.log(e.keyCode);
     if (e.keyCode >= 48 && e.keyCode <= 57) {
       alert("Please dont enter a number");
+      e.preventDefault();
     }
+    e.keycode === 13 && setInputValue("");
   };
 
   return (
@@ -20,7 +24,8 @@ const KeyboardClipboard = () => {
         }}
         onKeyDown={handleKeyDown}
       />
-      <p className="text-start mt-4">{inputValue.toLocaleUpperCase()}</p>
+
+      <p className="text-start mt-4">{inputValue}</p>
     </div>
   );
 };
