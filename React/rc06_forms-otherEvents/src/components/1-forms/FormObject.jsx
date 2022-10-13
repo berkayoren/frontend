@@ -18,6 +18,11 @@ const FormObject = () => {
           email:${email},
           password:${password}
     `);
+    setFormValues({
+      username: "",
+      email: "",
+      password: "",
+    });
   };
   const handleForm = (e) => {
     console.log(e.target.value);
