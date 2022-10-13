@@ -2,7 +2,11 @@ import { useState } from "react";
 const KeyboardClipboard = () => {
   const [inputValue, setInputValue] = useState("");
 
-  const handleKeyDown = () => {};
+  const handleKeyDown = (e) => {
+    if (e.keyCode >= 48 && e.keyCode <= 57) {
+      alert("Please dont enter a number");
+    }
+  };
 
   return (
     <div className="container text-center">
