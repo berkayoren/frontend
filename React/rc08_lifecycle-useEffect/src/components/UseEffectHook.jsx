@@ -49,19 +49,20 @@ const UseEffectHook = () => {
   // }, [count]);
 
   //? componentDidMount
-  const fetchData = () => {
-    console.log("Data Fetched");
-  };
-  useEffect(() => {
-    //! componentDidMount
-    const timerId = setInterval(fetchData, 1000);
-    console.log("Mounting");
+  // const fetchData = () => {
+  //   console.log("Data Fetched");
+  // };
+  // useEffect(() => {
+  //   //! componentDidMount
+  //   const timerId = setInterval(fetchData, 1000);
+  //   console.log("Mounting");
 
-    return () => {
-      clearInterval(timerId);
-      console.log("Unmounting");
-    };
-  }, []);
+  //   return () => {
+  //     //! componentWillUnMount
+  //     clearInterval(timerId);
+  //     console.log("Unmounting");
+  //   };
+  // }, []);
 
   return (
     <div className="container text-center">
