@@ -53,13 +53,15 @@ const UseEffectHook = () => {
     console.log("Data Fetched");
   };
   useEffect(() => {
+    //! componentDidMount
     const timerId = setInterval(fetchData, 1000);
     console.log("Mounting");
 
     return () => {
-      second;
+      clearInterval(timerId);
+      console.log("Unmounting");
     };
-  }, [third]);
+  }, []);
 
   return (
     <div className="container text-center">
