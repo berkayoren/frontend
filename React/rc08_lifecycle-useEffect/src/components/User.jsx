@@ -18,12 +18,11 @@ const User = () => {
     <div>
       <h1>
         {/* Optional Chaining */}
-        {name?.first}
-        {name?.last}
+        {name?.first} {name?.last}
       </h1>
-      <img src="" alt="" />
+      <img className="rounded-circle" src={picture?.large} alt="" />
       <p>{email}</p>
-      <h5>{}</h5>
+      <h5>{new Date(dob?.date).toLocaleDateString()}</h5>
       <button className="btn btn-danger" onClick={getUser}>
         Get User
       </button>
