@@ -42,11 +42,25 @@ const UseEffectHook = () => {
   // }, []);
 
   //? componentDidMount + componentDidUpdate
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     alert("Data Fetched");
+  //   }, 1000);
+  // }, [count]);
+
+  //? componentDidMount
+  const fetchData = () => {
+    console.log("Data Fetched");
+  };
   useEffect(() => {
-    setTimeout(() => {
-      alert("Data Fetched");
-    }, 1000);
-  }, [count]);
+    const timerId = setInterval(fetchData, 1000);
+    console.log("Mounting");
+
+    return () => {
+      second;
+    };
+  }, [third]);
+
   return (
     <div className="container text-center">
       <h1 className="text-danger">USE EFFECT</h1>
