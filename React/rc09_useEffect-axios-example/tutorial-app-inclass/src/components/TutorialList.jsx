@@ -12,7 +12,15 @@ const TutorialList = ({ tutor, getTutorials }) => {
     }
     getTutorials();
   };
-
+  const editTutorial = async (id) => {
+    const url = "https://tutorials-api-cw.herokuapp.com/api/tutorials";
+    try {
+      await axios.delete(`${url}/${id}`);
+    } catch (error) {
+      console.log(error);
+    }
+    getTutorials();
+  };
   return (
     <div className="container mt-4">
       <table className="table table-striped">
