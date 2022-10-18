@@ -3,6 +3,7 @@ import { AiFillDelete } from "react-icons/ai";
 import axios from "axios";
 
 const TutorialList = ({ tutor, getTutorials }) => {
+  //! DELETE (CRUD-Delete)
   const deleteTutorial = async (id) => {
     const url = "https://tutorials-api-cw.herokuapp.com/api/tutorials";
     try {
@@ -12,10 +13,12 @@ const TutorialList = ({ tutor, getTutorials }) => {
     }
     getTutorials();
   };
+
+  //! PUT
   const editTutorial = async (id) => {
     const url = "https://tutorials-api-cw.herokuapp.com/api/tutorials";
     try {
-      await axios.delete(`${url}/${id}`);
+      await axios.put(`${url}/${item.id}`);
     } catch (error) {
       console.log(error);
     }
@@ -47,6 +50,7 @@ const TutorialList = ({ tutor, getTutorials }) => {
                     size={20}
                     type="button"
                     className="me-2 text-warning"
+                    onClick={() => editTutorial(item)}
                   />
                   <AiFillDelete
                     size={22}
