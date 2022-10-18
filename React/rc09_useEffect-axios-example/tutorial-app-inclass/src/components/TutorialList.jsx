@@ -6,8 +6,11 @@ const TutorialList = ({ tutor, getTutorials }) => {
   const deleteTutorial = async (id) => {
     const url = "https://tutorials-api-cw.herokuapp.com/api/tutorials";
     try {
-      await axios.delete(`${url}/ ${id}`);
-    } catch (error) {}
+      await axios.delete(`${url}/${id}`);
+    } catch (error) {
+      console.log(error);
+    }
+    getTutorials();
   };
 
   return (
@@ -41,7 +44,7 @@ const TutorialList = ({ tutor, getTutorials }) => {
                     size={22}
                     type="button"
                     className="text-danger "
-                    onClick={deleteTutorial()}
+                    onClick={() => deleteTutorial(id)}
                   />
                 </td>
               </tr>
