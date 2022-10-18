@@ -14,7 +14,8 @@ const TutorialList = ({ tutor, getTutorials }) => {
     getTutorials();
   };
 
-  //! PUT
+  //! PUT (CRUD-update)
+  //! PUT : Whole Update,
   const editTutorial = async (id) => {
     const url = "https://tutorials-api-cw.herokuapp.com/api/tutorials";
     try {
