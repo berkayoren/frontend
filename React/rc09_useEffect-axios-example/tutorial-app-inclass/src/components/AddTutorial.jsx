@@ -6,16 +6,16 @@ const AddTutorial = ({ getTutorials }) => {
   const [description, setDescription] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefaul();
-    const newTutor = {
-      title,
-      description,
-    };
+    e.preventDefault();
+    const newTutor = { title, description };
     addTutorial(newTutor);
+    setTitle("");
+    setDescription("");
   };
+
   //! POST - CRUD (Create)
   const addTutorial = async (newTutor) => {
-    const url = "https://axios-example-cw.herokuapp.com/api/tutorials";
+    const url = "https://tutorials-api-cw.herokuapp.com/api/tutorials";
     try {
       await axios.post(url, newTutor);
     } catch (error) {
