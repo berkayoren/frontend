@@ -15,11 +15,12 @@ const TutorialList = ({ tutor, getTutorials }) => {
   };
 
   //! PUT (CRUD-update)
-  //! PUT : Whole Update,
-  const editTutorial = async (id) => {
+  //! PUT : Whole Update, Patch: Partially update
+  const editTutorial = async ({ id, title, description }) => {
+    // const { id, title, description } = id;
     const url = "https://tutorials-api-cw.herokuapp.com/api/tutorials";
     try {
-      await axios.put(`${url}/${item.id}`);
+      await axios.put(`${url}/${id}`, { title, description });
     } catch (error) {
       console.log(error);
     }
