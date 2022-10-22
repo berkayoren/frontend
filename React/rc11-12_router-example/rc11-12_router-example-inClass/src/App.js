@@ -4,7 +4,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import People from "./pages/People";
 import NotFound from "./pages/NotFound";
-
+import { Routes, Route } from "react-router-dom";
 import Paths from "./pages/Paths";
 
 function App() {
