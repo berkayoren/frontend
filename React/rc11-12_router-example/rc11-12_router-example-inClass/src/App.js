@@ -9,6 +9,7 @@ import Paths from "./pages/Paths";
 import PersonDetail from "./pages/PersonDetail";
 import FullStack from "./pages/FullStack";
 import Aws from "./pages/Aws";
+import PrivateRouter from "./pages/PrivateRouter";
 
 //? Link, NavLink ve Navigate componentleri declerative routing
 //? gerceklestirmek icin kullanilir.
@@ -29,19 +30,24 @@ function App() {
     <>
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/people" element={<People />} />
-        <Route path="/people/:id" element={<PersonDetail />} />
+        <Route index element={<Home />} />
+        <Route path="people" element={<People />} />
+        <Route path="people/:id" element={<PersonDetail />} />
 
         {/* nested route */}
+        <Route path="paths" element={<Paths />}>
+          <Route index element={<FullStack />} />
+          {/* <Route path="fullstack" element={<FullStack />} /> */}
+          <Route path="aws" element={<Aws />} />
+        </Route>
+        <Route path="contact" element={<PrivateRouter />}>
+          <Route path="contact" element={<Contact />} />
+        </Route>
 
-        <Route path="paths" element={<Paths />} />
-        <Route path="" element={<FullStack />} />
-        <Route path="aws" element={<Aws />}></Route>
-
-        <Route path="/contact" element={<Contact />} />
         {/* <Route path="*" element={<NotFound />} /> */}
-        <Route path="*" element={<Navigate to="/" />} />
+
+        {/* Redirect islemleri icin Navigate componenti kullanilabilir */}
+        {/* <Route path="*" element={<Navigate to="/" />} /> */}
       </Routes>
       <Footer />
     </>
