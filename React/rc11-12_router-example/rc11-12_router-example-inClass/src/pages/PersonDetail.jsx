@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
+import NotFound from "./NotFound";
 
 const PersonDetail = () => {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ const PersonDetail = () => {
   // console.log(person);
 
   const [person, setPerson] = useState("");
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch(`https://reqres.in/api/users/${id}`)
@@ -23,6 +25,16 @@ const PersonDetail = () => {
   }, []);
 
   console.log(person);
+
+  if (error) {
+    return <NotFound />;
+  } else if (!person) {
+    return (
+      <div className="text-center">
+        <h3>Data loading</h3>
+      </div>
+    );
+  }
 
   return (
     <div className="container text-center">
