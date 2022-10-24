@@ -16,11 +16,22 @@ const PersonDetail = () => {
 
   const [person, setPerson] = useState("");
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch(`https://reqres.in/api/users/${id}`)
-      .then((res) => res.json())
-      .then((data) => setPerson(data.data))
+      .then((res) => {
+        if (!res.ok) {
+          setError(true);
+          setLoading(false);
+          throw new Error("Something went wrong");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setLoading(false);
+        setPerson(data.data);
+      })
       .catch((err) => console.log(err));
   }, []);
 
@@ -28,31 +39,38 @@ const PersonDetail = () => {
 
   if (error) {
     return <NotFound />;
-  } else if (!person) {
+  }
+
+  if (loading) {
     return (
       <div className="text-center">
-        <h3>Data loading</h3>
+        <h3>Data Loading</h3>
       </div>
     );
   }
 
-  return (
-    <div className="container text-center">
-      <h3>
-        {person?.first_name} {person?.last_name}
-      </h3>
-      <img className="rounded" src={person?.avatar} alt="" />
-      <p>{person?.email}</p>
-      <div>
-        <button onClick={() => navigate("/")} className="btn btn-success me-2">
-          Go Home
-        </button>
-        <button onClick={() => navigate(-1)} className="btn btn-warning">
-          Go Back
-        </button>
+  if (!error && !loading) {
+    return (
+      <div className="container text-center">
+        <h3>
+          {person?.first_name} {person?.last_name}
+        </h3>
+        <img className="rounded" src={person?.avatar} alt="" />
+        <p>{person?.email}</p>
+        <div>
+          <button
+            onClick={() => navigate("/")}
+            className="btn btn-success me-2"
+          >
+            Go Home
+          </button>
+          <button onClick={() => navigate(-1)} className="btn btn-warning">
+            Go Back
+          </button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default PersonDetail;
