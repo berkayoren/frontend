@@ -27,8 +27,8 @@ const People = () => {
               className=" col-sm-12 col-md-6 col-lg-4"
               type="button"
               // onClick={() => navigate(`/people/${id}`, { state: person })}
-              // onClick={() => navigate(`/people/${id}`)}
-              onClick={() => <Link to={`/people/${id}`} />}
+              onClick={() => navigate(`/people/${id}`)}
+              // onClick={() => <Link to={`/people/${id}`} />}
             >
               <img className="rounded" src={avatar} alt="img" />
               <h6>
