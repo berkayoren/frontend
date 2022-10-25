@@ -13,8 +13,13 @@ const App = () => {
         <TomatoButton>Send</TomatoButton>
         <TomatoButton primary>Submit</TomatoButton>
       </Container>
-      <Container>
-        <StyledLink href="https://google.com" target="blank"></StyledLink>
+      <Container bg="#eee">
+        <StyledLink href="https://google.com" target="blank">
+          Google
+        </StyledLink>
+        <StyledLink secondary href="https://reactjs.org" target="blank">
+          React
+        </StyledLink>
       </Container>
     </>
   );
