@@ -1,10 +1,11 @@
 import Header from "./components/Header";
 import { ThemeProvider } from "styled-components";
+
 const style = {
   colors: {
-    header: "#fff",
+    header: "#333",
     body: "#fff",
-    footer: "#8a1c4a",
+    footer: "#8A1C4A",
   },
   margins: {},
   responsive: {},
@@ -12,7 +13,7 @@ const style = {
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={style}>
       <Header />
     </ThemeProvider>
   );
