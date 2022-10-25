@@ -3,7 +3,8 @@ import { Button } from "./components/Button.styled";
 const App = () => {
   return (
     <>
-      <Button> Click</Button>
+      <Button primary> Save</Button>
+      <Button>Clear</Button>
     </>
   );
 };
