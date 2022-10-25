@@ -8,7 +8,7 @@ const style = {
     footer: "#8A1C4A",
   },
   margins: {},
-  responsive: {},
+  responsive: "768px",
 };
 
 const App = () => {
