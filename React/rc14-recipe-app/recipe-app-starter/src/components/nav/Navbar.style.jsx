@@ -6,4 +6,7 @@ export const Nav = styled(Flex)`
   padding: 1rem 1.5rem;
 `;
 
-export const Brand = styled(Link);
+export const Brand = styled(Link)`
+color:${()}
+
+`
