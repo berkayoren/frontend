@@ -18,6 +18,7 @@ export const Brand = styled(Link)`
     color: ${({ theme }) => theme.colors.mainColor};
   }
 `;
+
 export const Menu = styled(Flex)`
   @media (max-width: ${({ theme }) => theme.screens.lg}) {
     flex-direction: column;
@@ -39,8 +40,8 @@ export const MenuLink = styled(Link)`
     font-weight: bold;
   }
   @media (max-width: ${({ theme }) => theme.screens.lg}) {
-    width:100%
-    border-bottom: 2px solid ${({ theme }) => theme.colors.mainColor}
+    width: 100%;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.mainColor};
   }
 `;
 
@@ -53,4 +54,5 @@ export const Hamburger = styled.div`
     display: block;
   }
 `;
+
 export default Nav;
