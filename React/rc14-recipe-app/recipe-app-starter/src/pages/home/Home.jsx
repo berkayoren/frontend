@@ -18,10 +18,10 @@ const Home = () => {
 
     setRecipes(data.hits);
   };
-  console.log(recipes);
-  useEffect(() => {
-    getData();
-  }, []);
+
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <div>
