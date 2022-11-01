@@ -1,7 +1,18 @@
 import React from "react";
+import { Card, MainContainer } from "./Cards.style";
 
-const Cards = () => {
-  return <div>Cards</div>;
+const Cards = ({ recipes }) => {
+  return (
+    <MainContainer wrap="wrap">
+      {recipes.map(({ recipe }, index) => {
+        return (
+          <Card key={index}>
+            <Header>{recipe.label}</Header>
+          </Card>
+        );
+      })}
+    </MainContainer>
+  );
 };
 
 export default Cards;
