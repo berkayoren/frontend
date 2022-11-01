@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useEffect, useState } from "react";
 import { Header } from "../login/Login.style";
+import Cards from "../../components/cards/Cards";
 
 const Home = () => {
   const APP_ID = "3161a284";
@@ -14,9 +15,16 @@ const Home = () => {
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${selectedMeal}`;
 
   const getData = async () => {
-    const { data } = await axios(url);
-
-    setRecipes(data.hits);
+    if (query) {
+      try {
+        const { data } = await axios(url);
+        setRecipes(data.hits);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      alert("Fill the form");
+    }
   };
 
   // useEffect(() => {
@@ -31,6 +39,7 @@ const Home = () => {
         mealType={mealType}
         getData={getData}
       />
+      <Cards />
     </div>
   );
 };
