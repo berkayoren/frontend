@@ -5,8 +5,7 @@ const theme = {
     logoColor: "#393e46",
   },
   screens: {
-    lg: "900ppx",
+    lg: "902px",
   },
 };
-
 export default theme;
