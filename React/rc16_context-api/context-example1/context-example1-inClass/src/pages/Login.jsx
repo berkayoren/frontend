@@ -38,7 +38,7 @@ const Login = () => {
             type="password"
             placeholder="Enter your password"
             name="password"
-            value={user?.password}
+            value={user?.password || ""}
             onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
         </Form.Group>
