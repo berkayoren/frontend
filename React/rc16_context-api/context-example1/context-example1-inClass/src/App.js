@@ -22,7 +22,8 @@ function App() {
           <Route path="login" element={<Login />} />
 
           <Route path="people" element={<PrivateRouter />}>
-            <Route path="people/:id" element={<PersonDetail />} />
+            <Route path="" element={<People />} />
+            <Route path=":id" element={<PersonDetail />} />
           </Route>
 
           <Route path="*" element={<Navigate to="/" />} />
