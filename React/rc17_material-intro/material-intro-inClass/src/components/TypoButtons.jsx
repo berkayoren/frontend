@@ -1,19 +1,19 @@
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { Button } from "@mui/material";
-import { Box } from "@mui/system";
-
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import DeleteIcon from "@mui/icons-material/Delete";
+import SendIcon from "@mui/icons-material/Send";
 const TypoButtons = () => {
   return (
     <>
       <Container maxWidth="md">
-        {/* h4 görünümlü h6 */}
         <Typography
           variant="h4"
           component="h6"
           align="center"
           mt={4}
-          color="primary"
+          color="error"
         >
           MUI Typography
         </Typography>
@@ -22,37 +22,49 @@ const TypoButtons = () => {
           variant="body2"
           align="justify"
           mt={4}
-          sx={{ background: "lightgreen", color: "#eee", fontSize: "1.4rem" }}
+          sx={{
+            backgroundColor: "lightgreen",
+            color: "#eee",
+            fontSize: "1.4rem",
+          }}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-          ab recusandae ea sequi nisi labore illum error! Temporibus magnam
-          dolorum sunt est, vero quisquam provident sequi veritatis assumenda
-          quod voluptas?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+          aspernatur et placeat ab aliquid, consectetur perspiciatis numquam
+          voluptates nulla quisquam!
         </Typography>
+
         <Typography
           variant="button"
           sx={{ display: "inline-block", marginTop: "2rem" }}
         >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore
-          distinctio harum ex officiis tempore! Architecto ad illo eos
-          doloribus, praesentium consequuntur labore eveniet officiis,
-          reprehenderit ab voluptate aut deleniti ducimus!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
+          debitis quo omnis porro labore a consequuntur beatae quam assumenda
+          dicta explicabo nam illo nemo, provident, veniam aliquid aut tenetur
+          accusamus?
         </Typography>
       </Container>
+
       <Container>
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             gap: "0.5rem",
-            width: "50%",
+            // width: "50%",
+            // justifyContent: "center",
             alignItems: "center",
-            margin: "auto ",
+            textAlign: "center",
           }}
         >
           <Button variant="text">Text</Button>
           <Button variant="contained">Contained</Button>
           <Button variant="outlined">Outlined</Button>
+          <Button variant="outlined" color="error" startIcon={<DeleteIcon />}>
+            Delete
+          </Button>
+          <Button variant="contained" color="secondary" endIcon={<SendIcon />}>
+            Send
+          </Button>
         </Box>
       </Container>
     </>
