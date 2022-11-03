@@ -10,7 +10,7 @@ import data from "../data";
 export default function CardGrid() {
   return (
     <>
-      <Typography variant="h4" color="error" align="center" mt={4}>
+      <Typography variant="h4" color="error" align="center" mt={4} mb={4}>
         CARD and GRID
       </Typography>
       <Grid container spacing={2} justifyContent="center" alignItems="center">
