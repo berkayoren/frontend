@@ -1,19 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import avatar from "../assets/icons/avatar.png";
 
 const Navbar = () => {
+  // const currentUser = { displayName: "Berkay Oren" };
+  const currentUser = false;
   return (
     <>
       <nav className="w-full flex flex-wrap items-center justify-between py-3 bg-gray-900  shadow-lg navbar navbar-expand-lg fixed-top">
         <div className="container-fluid w-full flex items-center justify-between px-6">
-          <a className="text-xl text-white pr-2 font-semibold" href="#">
-            Navbar
-          </a>
+          <Link className="text-xl text-white pr-2 font-semibold" to="#">
+            React Movie App
+          </Link>
           {/* Collapsible wrapper */}
           {/* Right elements */}
           <div className="flex items-center relative">
             {/* Icon */}
+            {currentUser && (
+              <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>
+            )}
             <div className="dropdown relative">
-              <a
+              <span
                 className="dropdown-toggle flex items-center hidden-arrow"
                 href="#"
                 id="dropdownMenuButton2"
@@ -22,13 +29,13 @@ const Navbar = () => {
                 aria-expanded="false"
               >
                 <img
-                  src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+                  src={currentUser?.photoURL || avatar}
                   className="rounded-full"
                   style={{ height: 25, width: 25 }}
-                  alt=""
+                  alt="user"
                   loading="lazy"
                 />
-              </a>
+              </span>
               <ul
                 className="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none left-auto right-0"
                 aria-labelledby="dropdownMenuButton2"
