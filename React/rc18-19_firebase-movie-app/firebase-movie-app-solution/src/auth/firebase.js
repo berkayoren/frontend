@@ -32,16 +32,23 @@ export const createUser = async (email, password, navigate) => {
       email,
       password
     );
+    navigate("/");
     console.log(userCredential);
   } catch (error) {
     alert(error.message);
   }
 };
 
-export const signIn = async () => {
+//* https://console.firebase.google.com/
+//* => Authentication => sign-in-method => enable Email/password
+//! Email/password ile girişi enable yap
+export const signIn = async (email, password, navigate) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
+    navigate("/");
   } catch (error) {
-    console.log(error.message);
+    alert(error.message);
   }
 };
+
+export const userObserver = () => {};
