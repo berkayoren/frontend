@@ -1,28 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import avatar from "../assets/icons/avatar.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  // const currentUser = { displayName: "Berkay Oren" };
-  const currentUser = false;
+  const currentUser = { displayName: "Berkay Oren" };
   return (
     <>
-      <nav className="w-full flex flex-wrap items-center justify-between py-3 bg-gray-900  shadow-lg navbar navbar-expand-lg fixed-top">
+      <nav className="w-full flex flex-wrap z-10 items-center justify-between py-3 bg-gray-900 text-gray-200 shadow-lg fixed navbar navbar-expand-lg ">
         <div className="container-fluid w-full flex items-center justify-between px-6">
-          <Link className="text-xl text-white pr-2 font-semibold" to="#">
+          <Link className="text-2xl text-white pr-2 font-semibold" to="/">
             React Movie App
           </Link>
-          {/* Collapsible wrapper */}
-          {/* Right elements */}
+
           <div className="flex items-center relative">
             {/* Icon */}
             {currentUser && (
-              <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>
+              <h5 className="mr-2 capitalize">{currentUser.displayName}</h5>
             )}
             <div className="dropdown relative">
               <span
-                className="dropdown-toggle flex items-center hidden-arrow"
-                href="#"
+                className="dropdown-toggle z-10 flex items-center hidden-arrow"
                 id="dropdownMenuButton2"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -32,37 +28,37 @@ const Navbar = () => {
                   src={currentUser?.photoURL || avatar}
                   className="rounded-full"
                   style={{ height: 25, width: 25 }}
-                  alt="user"
+                  alt="USER"
                   loading="lazy"
                 />
               </span>
               <ul
-                className="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none left-auto right-0"
+                className="dropdown-menu min-w-max absolute bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none left-auto right-0"
                 aria-labelledby="dropdownMenuButton2"
               >
                 <li>
-                  <a
+                  <Link
                     className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
-                    href="#"
+                    to="/login"
                   >
-                    Action
-                  </a>
+                    Login
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
-                    href="#"
+                    to="/register"
                   >
-                    Another action
-                  </a>
+                    Register
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <span
                     className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
-                    href="#"
+                    role="button"
                   >
-                    Something else here
-                  </a>
+                    Log Out
+                  </span>
                 </li>
               </ul>
             </div>
@@ -70,7 +66,8 @@ const Navbar = () => {
           {/* Right elements */}
         </div>
       </nav>
-      <div className="h-[52px]"></div>
+
+      <div className="h-[55px]"></div>
     </>
   );
 };
