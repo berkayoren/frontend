@@ -6,7 +6,10 @@ import { AuthContext } from "../context/AuthContextProvider";
 
 const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
-  // const currentUser = { displayName: "Berkay Ören" };
+  //* with custom hook
+  // const { currentUser } = useAuthContext();
+
+  // const currentUser = { displayName: "felix franko" };
   // const currentUser = false;
   return (
     <>
@@ -36,6 +39,7 @@ const Navbar = () => {
                   style={{ height: 25, width: 25 }}
                   alt="user"
                   loading="lazy"
+                  referrerPolicy="no-referrer"
                 />
               </span>
               <ul
