@@ -23,19 +23,18 @@ const Main = () => {
       .get(API)
       .then((res) => setMovies(res.data.results))
       .catch((err) => console.log(err))
-      .finally();
+      .finally(() => setLoading(false));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    getMovies(SEARCH_API + searchTerm);
-    setSearchTerm("");
     if (searchTerm && currentUser) {
+      getMovies(SEARCH_API + searchTerm);
       setSearchTerm("");
-    } else if (currentUser) {
-      alert("Please Login to See Details.");
+    } else if (!currentUser) {
+      alert("please log in to see details");
     } else {
-      alert("Please Enter a Text.");
+      alert("please enter a text");
     }
   };
 
