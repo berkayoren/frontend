@@ -1,51 +1,87 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import avatar from "../assets/icons/avatar.png";
+import { logOut } from "../auth/firebase";
 import { AuthContext } from "../context/AuthContextProvider";
+import Switch from "./Switch";
 
-const IMG_API = "https://image.tmdb.org/t/p/w1280";
-const defaultImage =
-  "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80";
-
-const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
+const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
-  const navigate = useNavigate();
+  //* with custom hook
+  // const { currentUser } = useAuthContext();
 
-  const getVoteClass = (vote) => {
-    if (vote >= 8) {
-      return "green";
-    } else if (vote >= 6) {
-      return "orange";
-    } else {
-      return "red";
-    }
-  };
+  // const currentUser = { displayName: "felix franko" };
+  // const currentUser = false;
   return (
-    <div
-      className="movie"
-      onClick={() => {
-        navigate("details/" + id);
-        !currentUser && alert("Please Login to See Details.");
-      }}
-    >
-      <img
-        loading="lazy"
-        src={poster_path ? IMG_API + poster_path : defaultImage}
-        alt="movie-card"
-      />
-      <div className="flex align-baseline justify-between p-1 text-white">
-        <h5>{title}</h5>
-        {currentUser && (
-          <span className={`tag ${getVoteClass(vote_average)}`}>
-            {vote_average.toFixed(1)}
-          </span>
-        )}
-      </div>
-      <div className="movie-over">
-        <h2>Overview</h2>
-        <p>{overview}</p>
-      </div>
-    </div>
+    <>
+      <nav className="w-full flex flex-wrap items-center justify-between py-3 bg-gray-900 text-white shadow-lg navbar navbar-expand-lg fixed-top">
+        <div className="container-fluid w-full flex items-center justify-between px-6">
+          <Link className="text-2xl  pr-2 font-semibold" to="/">
+            React Movie App
+          </Link>
+          {/* Collapsible wrapper */}
+          {/* Right elements */}
+          <div className="flex items-center relative">
+            {/* Icon */}
+            {currentUser && (
+              <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>
+            )}
+            <Switch />
+            <div className="dropdown relative">
+              <span
+                className="dropdown-toggle flex items-center hidden-arrow"
+                id="dropdownMenuButton2"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src={currentUser?.photoURL || avatar}
+                  className="rounded-full"
+                  style={{ height: 25, width: 25 }}
+                  alt="user"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                />
+              </span>
+              <ul
+                className="dropdown-menu min-w-max absolute bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none left-auto right-0"
+                aria-labelledby="dropdownMenuButton2"
+              >
+                <li>
+                  <Link
+                    className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                    to="/register"
+                  >
+                    Register
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                    to="/login"
+                  >
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <span
+                    className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                    role="button"
+                    onClick={() => logOut()}
+                  >
+                    Logout
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          {/* Right elements */}
+        </div>
+      </nav>
+      <div className="h-[52px]"></div>
+    </>
   );
 };
 
-export default MovieCard;
+export default Navbar;
