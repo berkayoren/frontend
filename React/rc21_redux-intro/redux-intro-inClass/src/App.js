@@ -12,6 +12,7 @@ function App() {
       <Provider store={store}>
         <Counter />
       </Provider>
+
       {/* <Todo /> */}
     </div>
   );
