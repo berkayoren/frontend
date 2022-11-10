@@ -1,13 +1,14 @@
 const initialState = {
-  todoList,
+  todoList: [{}],
 };
 
-export default (state = initialState, { type, payload }) => {
+const todoReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case first:
+    case "first":
       return { ...state, ...payload };
 
     default:
       return state;
   }
 };
+export default todoReducer;

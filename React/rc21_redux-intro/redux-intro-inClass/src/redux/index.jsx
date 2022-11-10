@@ -23,8 +23,9 @@ import counterReducer from "./reducers/counterReducer";
 import todoReducer from "./reducers/todoreducer";
 
 const rootReducer = combineReducers({
-  counter: counterReducer,
+  count: counterReducer,
   todo: todoReducer,
+  theme: themeReducer,
 });
 
 export const store = createStore(rootReducer);
