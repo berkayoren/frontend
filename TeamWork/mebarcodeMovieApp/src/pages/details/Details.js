@@ -1,14 +1,20 @@
-import './Details.css';
+import "./Details.css";
 
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import axios from 'axios';
-const IMG_API = 'https://image.tmdb.org/t/p/original';
-const API_KEY = '0dfeb1e3115d788bdd6ccd6d217d93cf';
-const youtubeUrl = 'https://www.youtube.com/embed/';
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
+import Comment from "../../component/comment/Comment";
+const IMG_API = "https://image.tmdb.org/t/p/original";
+const API_KEY = "0dfeb1e3115d788bdd6ccd6d217d93cf";
+const youtubeUrl = "https://www.youtube.com/embed/";
 const Details = () => {
   const [trailer, setTrailer] = useState();
   const { id, poster_path, overview, title } = useLocation().state;
+  const filmInfo = {
+    id,
+    poster_path,
+    title,
+  };
   useEffect(() => {
     getDetails(id, API_KEY);
   }, [id]);
@@ -25,7 +31,7 @@ const Details = () => {
     }
   };
 
-  const filterTrailer = trailer?.filter((e) => e.type === 'Trailer');
+  const filterTrailer = trailer?.filter((e) => e.type === "Trailer");
 
   return (
     <div className="details">
@@ -56,6 +62,7 @@ const Details = () => {
           <div>Loading......</div>
         )}
       </div>
+      <Comment />
     </div>
   );
 };

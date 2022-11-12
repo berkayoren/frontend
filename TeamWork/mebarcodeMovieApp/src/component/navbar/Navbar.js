@@ -1,9 +1,9 @@
-import './Navbar.css';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { auth } from '../../auth/firebase-config';
-import { AuthContext } from '../../context/AuthContext';
-import { signOut } from 'firebase/auth';
-import { useContext } from 'react';
+import "./Navbar.css";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { auth } from "../../auth/firebase-config";
+import { AuthContext } from "../../context/AuthContext";
+import { signOut } from "firebase/auth";
+import { useContext } from "react";
 
 const Navbar = ({ count }) => {
   let path = useLocation().pathname;
@@ -11,13 +11,13 @@ const Navbar = ({ count }) => {
   const { currentUser } = useContext(AuthContext);
   const signOutFunc = async () => {
     await signOut(auth);
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
     <div className="navbar">
       <div className="title">
-        <Link style={{ textDecoration: 'none' }} to="/">
+        <Link style={{ textDecoration: "none" }} to="/">
           <div className="h1">
             Movie <span>DataBase</span>
             {currentUser && <h6>Go To Home Page</h6>}
@@ -27,14 +27,14 @@ const Navbar = ({ count }) => {
       {count ? null : (
         <div className="warning">
           <p className="info">
-            {path === '/login' && "Don't you have an account "}
-            {path === '/register' && 'Already have an account '}
+            {path === "/login" && "Don't you have an account "}
+            {path === "/register" && "Already have an account "}
             <Link
               className="link"
-              to={`${path === '/login' ? '/register' : '/login'}`}
+              to={`${path === "/login" ? "/register" : "/login"}`}
             >
-              {path === '/register' && 'Login'}
-              {path === '/login' && 'Register'}
+              {path === "/register" && "Login"}
+              {path === "/login" && "Register"}
             </Link>
           </p>
         </div>
@@ -56,8 +56,7 @@ const Navbar = ({ count }) => {
 
 export default Navbar;
 
-{
-  /* {currentUser && (
+/* {currentUser && (
         <Link style={{ textDecoration: 'none' }} to="/">
           <h2>
             Movie <span>DataBase</span>
@@ -65,4 +64,3 @@ export default Navbar;
           </h2>
         </Link>
       )} */
-}
