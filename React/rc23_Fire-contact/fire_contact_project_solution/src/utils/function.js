@@ -1,8 +1,17 @@
 // ADD USER
 
-import { getDatabase, ref, set, push, onValue } from "firebase/database";
+import {
+  getDatabase,
+  ref,
+  set,
+  push,
+  onValue,
+  remove,
+  update,
+} from "firebase/database";
 import firebase from "./firebase";
 import { useState, useEffect } from "react";
+import Toastify from "./toastify";
 
 export const AddUser = (info) => {
   const db = getDatabase(firebase);
@@ -36,4 +45,22 @@ export const useFetch = () => {
     });
   }, []);
   return { isLoading, contactList };
+};
+
+export const DeleteUser = (id) => {
+  const db = getDatabase(firebase);
+  // const userRef=ref(db,"user/")
+  remove(ref(db, "user/" + id));
+  Toastify("Deleted Successfully");
+};
+
+export const UpdateUser = (info) => {
+  const db = getDatabase(firebase);
+  const userRef = ref(db, "user/");
+
+  const updates = {};
+
+  updates["user/" + info.id] = info;
+
+  return update(ref(db), updates);
 };
