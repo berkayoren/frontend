@@ -12,8 +12,9 @@ import { Formik, Form } from "formik";
 import { TextField } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import * as yup from "yup";
-import { login } from "../hooks/useAuthCalls";
+import useAuthCall from "../hooks/useAuthCalls";
 import { useEffect } from "react";
+import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 
 const loginSchema = yup.object().shape({
   email: yup
@@ -34,13 +35,19 @@ const loginSchema = yup.object().shape({
 const Login = () => {
   const navigate = useNavigate();
   const { currentUser, error, loading } = useSelector((state) => state?.auth);
+  const { login } = useAuthCall();
+
   useEffect(() => {
-    error && toastErrorNotify("Couln't log in.");
     if (currentUser) {
       navigate("/stock");
-      toastSuccessNotify("Login is Successful");
+      toastSuccessNotify("Login Performed");
     }
   }, [currentUser]);
+
+  useEffect(() => {
+    error && toastErrorNotify("Login can not e performed");
+  }, [error]);
+
   return (
     <Container maxWidth="lg">
       <Grid
