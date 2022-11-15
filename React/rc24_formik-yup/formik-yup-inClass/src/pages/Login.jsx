@@ -27,9 +27,9 @@ const loginSchema = yup.object().shape({
     .min(8, "Password must have min 8 chars")
     .max(16, "Password must have max 16 chars")
     .matches(/\d+/, "Password must have a number")
-    .matches(/[a-z]+/, "Password must have a lowercase")
-    .matches(/[A-Z]+/, "Password must have an uppercase")
-    .matches(/[!,?{}><%&$#£+-.]+/, " Password must have a special char"),
+    .matches(/[a-z]+/, "Password must have a lowercase"),
+  // .matches(/[A-Z]+/, "Password must have an uppercase")
+  // .matches(/[!,?{}><%&$#£+-.]+/, " Password must have a special char"),
 });
 
 const Login = () => {
