@@ -13,6 +13,7 @@ import { TextField } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import * as yup from "yup";
 import { login } from "../hooks/useAuthCalls";
+import { useEffect } from "react";
 
 const loginSchema = yup.object().shape({
   email: yup
@@ -33,7 +34,13 @@ const loginSchema = yup.object().shape({
 const Login = () => {
   const navigate = useNavigate();
   const { currentUser, error, loading } = useSelector((state) => state?.auth);
-
+  useEffect(() => {
+    error && toastErrorNotify("Couln't log in.");
+    if (currentUser) {
+      navigate("/stock");
+      toastSuccessNotify("Login is Successful");
+    }
+  }, [currentUser]);
   return (
     <Container maxWidth="lg">
       <Grid
@@ -76,6 +83,7 @@ const Login = () => {
             validationSchema={loginSchema}
             onSubmit={(values, actions) => {
               login(values);
+              navigate("/stock");
               actions.resetForm();
               actions.setSubmitting(false);
             }}
