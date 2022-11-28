@@ -39,4 +39,15 @@ type Control = "user" | "admin" | "moderator";
 
 let c = "moderator";
 
-let d: string = c;
+let d: any = 5;
+d = "g";
+
+type Person = {
+  firstName: string;
+  lastName: string;
+  age?: number;
+};
+
+let people: Person[] = [];
+
+people.push({ firstName: "John", lastName: "Doe" });
