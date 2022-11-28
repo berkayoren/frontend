@@ -28,3 +28,15 @@ function RoundUp(n: string | number): string {
 }
 
 console.log(RoundUp("6.825"));
+
+function greet(message: string, person: string = "Master"): string {
+  return message + " " + person + "!";
+}
+
+const gr1 = greet("Good Night!");
+console.log(gr1);
+type Control = "user" | "admin" | "moderator";
+
+let c = "moderator";
+
+let d: string = c;
