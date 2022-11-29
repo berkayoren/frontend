@@ -97,3 +97,10 @@ export {};
 
 // let numArr = getItems([4, 5, 88]);
 // numArr.push("Noah Adams");
+
+function displayType<T, U>(p1: T, p2: U): void {
+  console.log("param1: " + p1, "param1 type:" + typeof p1);
+  console.log("param1: " + p2, "param2 type:" + typeof p2);
+}
+
+displayType(console.log, 4 < 8);
