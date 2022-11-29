@@ -1,53 +1,53 @@
-export {};
-console.log("Hello TypeScript!");
+// export {};
+// console.log("Hello TypeScript!");
 
-let myVar: any = "cw";
-myVar = 77;
+// let myVar: any = "cw";
+// myVar = 77;
 
-let numbers: number[] = []; // = [1, 2, 3];
+// let numbers: number[] = []; // = [1, 2, 3];
 
-// numbers.push("3");
+// // numbers.push("3");
 
-let v1: unknown = 5;
-let v2: number = v1 as number;
-console.log(v1, v2);
+// let v1: unknown = 5;
+// let v2: number = v1 as number;
+// console.log(v1, v2);
 
-let firstname = "Berk";
-let lastname = "Oren";
-function getFullName(): void {
-  return; // firstname + "" + lastname;
-}
+// let firstname = "Berk";
+// let lastname = "Oren";
+// function getFullName(): void {
+//   return; // firstname + "" + lastname;
+// }
 
-let num = 4.325;
-function RoundUp(n: string | number): string {
-  if (typeof n === "number") {
-    return n.toFixed(2);
-  } else {
-    return parseFloat(n).toFixed(2);
-  }
-}
+// let num = 4.325;
+// function RoundUp(n: string | number): string {
+//   if (typeof n === "number") {
+//     return n.toFixed(2);
+//   } else {
+//     return parseFloat(n).toFixed(2);
+//   }
+// }
 
-console.log(RoundUp("6.825"));
+// console.log(RoundUp("6.825"));
 
-function greet(message: string, person: string = "Master"): string {
-  return message + " " + person + "!";
-}
+// function greet(message: string, person: string = "Master"): string {
+//   return message + " " + person + "!";
+// }
 
-const gr1 = greet("Good Night!");
-console.log(gr1);
-type Control = "user" | "admin" | "moderator";
+// const gr1 = greet("Good Night!");
+// console.log(gr1);
+// type Control = "user" | "admin" | "moderator";
 
-let c = "moderator";
+// let c = "moderator";
 
-let d: any = 5;
-d = "g";
+// let d: any = 5;
+// d = "g";
 
-type Person = {
-  firstName: string;
-  lastName: string;
-  age?: number;
-};
+// type Person = {
+//   firstName: string;
+//   lastName: string;
+//   age?: number;
+// };
 
-let people: Person[] = [];
+// let people: Person[] = [];
 
-people.push({ firstName: "John", lastName: "Doe" });
+// people.push({ firstName: "John", lastName: "Doe" });
