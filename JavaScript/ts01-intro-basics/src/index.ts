@@ -52,39 +52,48 @@ export {};
 
 // people.push({ firstName: "John", lastName: "Doe" });
 
-interface Person {
-  firstName: string;
-  lastName: string;
-  citizenId: string;
+// interface Person {
+//   firstName: string;
+//   lastName: string;
+//   citizenId: string;
+// }
+
+// interface Employee {
+//   firstName: string;
+//   lastName: string;
+//   id: number;
+//   salary: number;
+//   department: string;
+// }
+
+// class CwInstructor implements Person, Employee {
+//   salary: number = 10000;
+//   citizenId = "121324201";
+//   constructor(
+//     public firstName: string,
+//     public lastName: string,
+//     public department: string,
+//     public id: number
+//   ) {}
+// }
+
+// let noah = new CwInstructor("Noah", "Adams", "Full-Stack", 1);
+// console.log(noah);
+
+// function calisanBilgisi(calisan: Employee) {
+//   console.log(
+//     "calisan adi: " + calisan.firstName + " " + calisan.lastName,
+//     "calisan bölümü: " + calisan.department
+//   );
+// }
+
+// calisanBilgisi(noah);
+
+function getItems<T>(items: any[]): any[] {
+  return items;
 }
 
-interface Employee {
-  firstName: string;
-  lastName: string;
-  id: number;
-  salary: number;
-  department: string;
-}
+const getAllItems = <T>(items: T[]): T[] => items;
 
-class CwInstructor implements Person, Employee {
-  salary: number = 10000;
-  citizenId = "121324201";
-  constructor(
-    public firstName: string,
-    public lastName: string,
-    public department: string,
-    public id: number
-  ) {}
-}
-
-let noah = new CwInstructor("Noah", "Adams", "Full-Stack", 1);
-console.log(noah);
-
-function calisanBilgisi(calisan: Employee) {
-  console.log(
-    "calisan adi: " + calisan.firstName + " " + calisan.lastName,
-    "calisan bölümü: " + calisan.department
-  );
-}
-
-calisanBilgisi(noah);
+let numArr = getItems([4, 5, 88]);
+numArr.push("Noah Adams");
