@@ -1,4 +1,4 @@
-// export {};
+export {};
 // console.log("Hello TypeScript!");
 
 // let myVar: any = "cw";
@@ -51,3 +51,38 @@
 // let people: Person[] = [];
 
 // people.push({ firstName: "John", lastName: "Doe" });
+
+interface Person {
+  firstName: string;
+  lastName: string;
+  citizenId: string;
+}
+
+interface Employee {
+  firstName: string;
+  lastName: string;
+  id: number;
+  salary: number;
+  department: string;
+}
+
+class CwInstructor implements Person, Employee {
+  salary: number = 10000;
+  citizenId = "121324201";
+  constructor(
+    public firstName: string,
+    public lastName: string,
+    public department: string,
+    public id: number
+  ) {}
+}
+
+let noah = new CwInstructor("Noah", "Adams", "Full-Stack", 1);
+console.log(noah);
+
+function calisanBilgisi(calisan: Employee) {
+  console.log(
+    "calisan adi: " + calisan.firstName + " " + calisan.lastName,
+    "calisan bölümü: " + calisan.department
+  );
+}
