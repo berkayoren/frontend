@@ -86,3 +86,5 @@ function calisanBilgisi(calisan: Employee) {
     "calisan bölümü: " + calisan.department
   );
 }
+
+calisanBilgisi(noah);
