@@ -89,11 +89,11 @@ export {};
 
 // calisanBilgisi(noah);
 
-function getItems<T>(items: any[]): any[] {
-  return items;
-}
+// function getItems<T>(items: any[]): any[] {
+//   return items;
+// }
 
-const getAllItems = <T>(items: T[]): T[] => items;
+// const getAllItems = <T>(items: T[]): T[] => items;
 
-let numArr = getItems([4, 5, 88]);
-numArr.push("Noah Adams");
+// let numArr = getItems([4, 5, 88]);
+// numArr.push("Noah Adams");
